@@ -5,13 +5,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --config webpack.common.js"
+    "watch": "webpack --watch --config webpack.dev.js"
   },
   "author": "himn1",
   "license": "UNLICENSED",
   "devDependencies": {
     "clean-webpack-plugin": "^0.1.17",
     "html-webpack-plugin": "^2.30.1",
-    "webpack": "^3.6.0"
+    "webpack": "^3.6.0",
+    "webpack-merge": "^4.1.0"
   }
 }
