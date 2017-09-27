@@ -1,12 +1,17 @@
 {
   "private": true,
   "name": "boilerplate",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "webpack --config webpack.common.js"
   },
   "author": "himn1",
-  "license": "ISC"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.17",
+    "html-webpack-plugin": "^2.30.1",
+    "webpack": "^3.6.0"
+  }
 }
