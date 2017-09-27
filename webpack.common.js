@@ -8,6 +8,18 @@ module.exports = {
     app: './src/index.js'
   },
   module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['env']
+          }
+        }
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
