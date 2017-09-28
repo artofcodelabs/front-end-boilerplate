@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "watch": "webpack --watch --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "server": "node server.js"
   },
   "author": "himn1",
   "license": "UNLICENSED",
@@ -16,8 +17,10 @@
     "babel-minify-webpack-plugin": "^0.2.0",
     "babel-preset-env": "^1.6.0",
     "clean-webpack-plugin": "^0.1.17",
+    "express": "^4.15.5",
     "html-webpack-plugin": "^2.30.1",
     "webpack": "^3.6.0",
+    "webpack-dev-middleware": "^1.12.0",
     "webpack-merge": "^4.1.0"
   }
 }
