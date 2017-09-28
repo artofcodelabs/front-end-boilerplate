@@ -23,6 +23,9 @@ module.exports = {
       exclude: [],
       verbose: true,
       dry: false
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common'
     })
   ],
   output: {
