@@ -19,7 +19,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['public/*.js', 'public/*.js.map'], {
+    new CleanWebpackPlugin(['public/js'], {
       exclude: [],
       verbose: true,
       dry: false
@@ -30,6 +30,7 @@ module.exports = {
   ],
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'public')
+    path: path.resolve(__dirname, 'public/js'),
+    publicPath: '/js/'
   }
 };
