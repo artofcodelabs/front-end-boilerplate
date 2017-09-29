@@ -5,7 +5,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
   entry: {
     index: './src/index.js',
-    page1: './src/page1.js'
+    page1: './src/page1.js',
+    vendor: [
+      'react', 'react-dom'
+    ]
   },
   module: {
     rules: [
@@ -23,6 +26,9 @@ module.exports = {
       exclude: [],
       verbose: true,
       dry: false
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
