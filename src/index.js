@@ -1,9 +1,9 @@
 import React from 'react';
-import {render} from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import {main} from './helpers/common.js'
 import {default as Root} from './components/IndexRoot';
 
 main();
 
-render(<Root />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));

@@ -1,5 +1,4 @@
 {
-  "private": true,
   "name": "boilerplate",
   "version": "0.0.1",
   "description": "",
@@ -9,7 +8,7 @@
     "start": "node server.js"
   },
   "author": "himn1",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -18,8 +17,10 @@
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.17",
     "express": "^4.15.5",
+    "react-hot-loader": "^1.3.1",
     "webpack": "^3.6.0",
     "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.19.1",
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
