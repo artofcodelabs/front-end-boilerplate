@@ -3,8 +3,23 @@ const merge = require('webpack-merge');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 const common = require('./webpack.common.js');
 
-module.exports = merge(common, {
+const config = merge.smart(common, {
   devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true
+            }
+          }
+        ]
+      }
+    ]
+  },
   plugins: [
     new MinifyPlugin(),
     new webpack.DefinePlugin({
@@ -14,3 +29,5 @@ module.exports = merge(common, {
     })
   ]
 });
+
+module.exports = config;
