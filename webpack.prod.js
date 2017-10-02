@@ -8,7 +8,7 @@ const config = merge.smart(common, {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.(styl|css)$/,
         use: [
           {
             loader: 'css-loader',

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import {main} from './helpers/common.js'
 import {default as Root} from './components/IndexRoot';
 
-import './css/index.css';
+import './css/index.styl';
 
 main();
 

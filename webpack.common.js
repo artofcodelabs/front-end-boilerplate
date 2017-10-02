@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -20,22 +21,25 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-            options: {}
-          },
-          {
-            loader: 'css-loader',
-            options: {}
-          }
-        ]
+        test: /\.(styl|css)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {}
+            },
+            {
+              loader: 'stylus-loader',
+              options: {}
+            }
+          ]
+        })
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['public/js'], {
+    new CleanWebpackPlugin(['public/assets'], {
       exclude: [],
       verbose: true,
       dry: false
@@ -45,11 +49,14 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
+    }),
+    new ExtractTextPlugin({
+      filename: "[name].css"
     })
   ],
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'public/js'),
-    publicPath: '/js/'
+    path: path.resolve(__dirname, 'public/assets'),
+    publicPath: '/assets/'
   }
 };
