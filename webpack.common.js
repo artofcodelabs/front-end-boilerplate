@@ -25,14 +25,18 @@ module.exports = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            {
-              loader: 'css-loader',
-              options: {}
-            },
-            {
-              loader: 'stylus-loader',
-              options: {}
-            }
+            {loader: 'css-loader'},
+            {loader: 'stylus-loader'}
+          ]
+        })
+      },
+      {
+        test: /\.(sass|scss)$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {loader: 'css-loader'},
+            {loader: 'sass-loader'}
           ]
         })
       }
