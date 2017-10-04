@@ -23,6 +23,34 @@ const config = merge.smart(common, {
       {
         test: /\.(sass|scss)$/,
         use: styleLoaders
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'image-webpack-loader',
+            options: {
+              gifsicle: {
+                interlaced: false,
+              },
+              optipng: {
+                optimizationLevel: 7,
+              },
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              },
+              mozjpeg: {
+                progressive: true,
+                quality: 65
+              },
+              // Specifying webp here will create a WEBP version of your JPG/PNG images
+              webp: {
+                quality: 75
+              }
+            }
+          }
+        ]
       }
     ]
   },
@@ -33,7 +61,10 @@ const config = merge.smart(common, {
         'NODE_ENV': JSON.stringify('production')
       }
     })
-  ]
+  ],
+  output: {
+    publicPath: './assets/'
+  }
 });
 
 module.exports = config;

@@ -60,6 +60,18 @@ module.exports = {
             {loader: 'sass-loader'}
           ]
         })
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              fallback: 'file-loader'
+            }
+          }
+        ]
       }
     ]
   },
@@ -81,7 +93,6 @@ module.exports = {
   ],
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'public/assets'),
-    publicPath: '/assets/'
+    path: path.resolve(__dirname, 'public/assets')
   }
 };
