@@ -24,11 +24,11 @@ const postCssOptions = {
 
 module.exports = {
   entry: {
-    index: './src/index',
-    page1: './src/page1',
     vendor: [
       'react', 'react-dom'
-    ]
+    ],
+    index: './src/index',
+    page1: './src/page1'
   },
   module: {
     rules: [
@@ -88,10 +88,13 @@ module.exports = {
       dry: false
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor'
-    }),
+			// The order of this array matters
+			names: ["common", "vendor"],
+			minChunks: 2
+		}),
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'common'
+      name: "manifest",
+      minChunks: Infinity
     }),
     new ExtractTextPlugin({
       filename: "[name].css"
