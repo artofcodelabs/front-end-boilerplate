@@ -1,8 +1,8 @@
 {
-  "name": "boilerplate",
+  "private": true,
+  "name": "front-end-boilerplate",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "node server.js"
