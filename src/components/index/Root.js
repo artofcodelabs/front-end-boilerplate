@@ -1,6 +1,6 @@
 import React from 'react';
-import Nav from './Nav';
-import * as mathFunc from '../helpers/math';
+import Nav from '../shared/Nav';
+import * as mathFunc from '../../helpers/math';
 
 const IndexRoot = () => {
   return (

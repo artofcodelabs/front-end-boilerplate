@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from './Nav';
-import {square} from '../helpers/math';
-import Logo from '../images/logo.png';
+import Nav from '../shared/Nav';
+import {square} from '../../helpers/math';
+import Logo from '../../images/logo.png';
 
 const Page1Root = () => {
   return (
