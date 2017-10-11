@@ -3,3 +3,7 @@ export function main(){
     console.log('Dev mode enabled.');
   }
 }
+
+export function isProd(){
+  return process.env.NODE_ENV === 'production'
+}

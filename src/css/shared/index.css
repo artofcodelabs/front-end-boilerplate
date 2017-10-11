@@ -3,3 +3,8 @@
 body{
   font-family: 'Roboto';
 }
+
+a.active{
+  font-weight: bold;
+  text-decoration: none;
+}

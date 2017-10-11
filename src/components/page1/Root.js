@@ -3,7 +3,7 @@ import Nav from '../shared/Nav';
 import {square} from '../../helpers/math';
 import Logo from '../../images/logo.png';
 
-const Page1Root = () => {
+const Root = () => {
   return (
     <div>
       <Nav />
@@ -13,4 +13,4 @@ const Page1Root = () => {
   )
 }
 
-export default Page1Root;
+export default Root;
