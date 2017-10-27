@@ -6,16 +6,13 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   entry: {
     index: [
-      'webpack-hot-middleware/client',
       './src/index'
     ],
     page1: [
-      'webpack-hot-middleware/client',
       './src/page1'
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     publicPath: '/assets/'
