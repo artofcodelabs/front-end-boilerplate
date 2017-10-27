@@ -1,5 +1,5 @@
 export function main(){
-  if (process.env.NODE_ENV !== 'production') {
+  if(!isProd()){
     console.log('Dev mode enabled.');
   }
 }
