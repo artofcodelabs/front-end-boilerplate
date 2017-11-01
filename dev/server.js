@@ -1,3 +1,5 @@
+const rootPath = '..';
+
 const path = require('path');
 const express = require('express');
 const webpack = require('webpack');
@@ -5,7 +7,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware');
 const Router = require('./router');
 
 const app = express();
-const config = require('./webpack.dev.js');
+const config = require(`${rootPath}/webpack.dev.js`);
 const compiler = webpack(config);
 const router = new Router(app);
 

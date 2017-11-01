@@ -2,8 +2,9 @@
   border-radius: $radius
 
 p
-  border: 1px solid #666
-  +border-radius(10px)
+  &.with-border
+    border: 1px solid #666
+    +border-radius(10px)
 
   &.with-background
     background: url('../images/background.png')
