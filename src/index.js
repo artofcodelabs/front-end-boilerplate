@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
-import {main, isProd} from './helpers/common.js'
-import Root from './components/index/Root';
-import NoMatch from './components/index/NoMatch';
+import {main, isProd} from 'helpers/common.js'
+import Root from 'components/index/Root';
+import NoMatch from 'components/index/NoMatch';
 
 import './css/shared/index.css';
 import './css/index.styl';

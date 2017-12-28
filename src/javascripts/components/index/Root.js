@@ -1,6 +1,6 @@
 import React from 'react';
-import Nav from '../shared/Nav';
-import * as mathFunc from '../../helpers/math';
+import Nav from 'components/shared/Nav';
+import * as mathFunc from 'helpers/math';
 
 class Root extends React.Component {
   constructor(props){

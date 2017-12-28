@@ -1,7 +1,7 @@
 import React from 'react';
-import Nav from '../shared/Nav';
-import {square} from '../../helpers/math';
-import Logo from '../../images/logo.png';
+import Nav from 'components/shared/Nav';
+import {square} from 'helpers/math';
+import Logo from 'logo.png';
 import Articles from './Articles';
 
 const Root = () => {

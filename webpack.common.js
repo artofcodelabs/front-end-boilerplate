@@ -23,6 +23,13 @@ const postCssOptions = {
 }
 
 module.exports = {
+  resolve: {
+    modules: [
+      path.join(__dirname, 'src', 'javascripts'),
+      path.join(__dirname, 'src', 'images'),
+      "node_modules"
+    ]
+  },
   entry: {
     vendor: [
       'react', 'react-dom'
