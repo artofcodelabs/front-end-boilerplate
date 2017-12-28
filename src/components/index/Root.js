@@ -11,14 +11,25 @@ class Root extends React.Component {
   }
 
   body(){
-    const cubed = <p>{`3 cubed is ${mathFunc.cube(3)}`}</p>;
-    const squared = <p>{`9 squared is ${mathFunc.square(9)}`}</p>;
     if(this.state.active === 'squaring')
-      return squared
+      return this.squared()
     else if(this.state.active === 'cubing')
-      return cubed
+      return this.cubed()
     else
-      return <div>{cubed}{squared}</div>
+      return(
+        <div>
+          {this.cubed()}
+          {this.squared()}
+        </div>
+      )
+  }
+
+  cubed(){
+    return <p>{`3 cubed is ${mathFunc.cube(3)}`}</p>;
+  }
+
+  squared(){
+    return <p>{`9 squared is ${mathFunc.square(9)}`}</p>;
   }
 
   render(){
