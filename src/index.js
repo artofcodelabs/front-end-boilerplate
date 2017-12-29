@@ -6,8 +6,8 @@ import {main, isProd} from 'helpers/common.js'
 import Root from 'components/index/Root';
 import NoMatch from 'components/index/NoMatch';
 
-import './css/shared/index.css';
-import './css/index.styl';
+import 'shared/index.css';
+import 'index.styl';
 
 main();
 
