@@ -9,11 +9,20 @@ class Nav extends React.Component{
     return this.props.page === 'index';
   }
 
+  isOnSubmenu(){
+    return ['squaring', 'cubing'].includes(this.props.active);
+  }
+
   indexLink(){
-    const sublinks = ['squaring', 'cubing'];
-    if(this.isOnIndex() && !sublinks.includes(this.props.active))
+    if(this.isOnIndex() && !this.isOnSubmenu())
       return <b>Index</b>
     return <a href="index.html">Index</a>
+  }
+
+  page1Link(){
+    if(this.props.page === 'page1')
+      return <b>Page 1</b>
+    return <a href="page1.html">Page 1</a>
   }
 
   squaringLink(){
@@ -47,7 +56,7 @@ class Nav extends React.Component{
             {this.indexLink()}
             {this.submenu()}
           </li>
-          <li><a href="page1.html">Page 1</a></li>
+          <li>{this.page1Link()}</li>
         </ul>
       </nav>
     )

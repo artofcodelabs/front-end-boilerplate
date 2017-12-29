@@ -7,7 +7,7 @@ import Articles from './Articles';
 const Root = () => {
   return (
     <div>
-      <Nav />
+      <Nav page='page1' />
 
       <h2>Assets</h2>
       <p className='with-background with-border'>{`4 squared is ${square(4)}`}</p>
