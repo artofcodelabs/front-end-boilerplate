@@ -6,15 +6,16 @@ class Article extends React.Component{
   }
 
   render(){
+    const {id, title, author, publishedAt, content} = this.props;
     return(
-      <article id={`article_${this.props.id}`} key={this.props.id}>
-        <h3>{this.props.title}</h3>
+      <article id={`article_${id}`} key={id}>
+        <h3>{title}</h3>
         <p>
           <i>
-            {this.props.author} wrote this on {this.props.publishedAt.toLocaleDateString('pl')}
+            {author} wrote this on {publishedAt.toLocaleDateString('pl')}
           </i>
         </p>
-        <p>{this.props.content}</p>
+        <p>{content}</p>
       </article>
     )
   }

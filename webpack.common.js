@@ -33,7 +33,7 @@ module.exports = {
   },
   entry: {
     vendor: [
-      'react', 'react-dom'
+      'react', 'react-dom', 'react-router-dom', 'loco-js-model'
     ],
     index: './src/index',
     page1: './src/page1'

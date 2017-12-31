@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "node dev/server.js",
-    "clear": "TODO"
+    "clear": "echo TODO"
   },
   "author": "himn1",
   "license": "MIT",
