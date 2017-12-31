@@ -15,7 +15,7 @@ class List extends React.Component{
     return(
       <div>
         {this.loader()}
-        {this.props.articles.map(article => <Article {...article} />)}
+        {this.props.articles.map(article => <Article key={article.id} {...article} />)}
       </div>
     )
   }
