@@ -64,7 +64,8 @@ class Article extends Base{
 
   constructor(data){
     super(data);
-    this.published = this.publishedAt ? true : false
+    this.published = this.publishedAt ? true : false;
+    this.read = this.read ? true : false;
   }
 
   vulgarityLevel(){

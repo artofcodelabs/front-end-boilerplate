@@ -18,3 +18,10 @@ export function addArticles(articles) {
     articles
   }
 }
+
+export function markAsRead(id) {
+  return {
+    type: 'MARK_AS_READ',
+    id: id
+  }
+}

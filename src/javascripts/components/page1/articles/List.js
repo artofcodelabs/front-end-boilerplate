@@ -22,7 +22,13 @@ class List extends React.Component{
     return(
       <div>
         {this.link()}
-        {this.props.articles.map(article => <Article key={article.id} {...article} />)}
+        {this.props.articles.map(article =>
+          <Article
+            key={article.id}
+            {...article}
+            markAsRead={this.props.markAsRead}
+          />
+        )}
       </div>
     )
   }

@@ -15,7 +15,11 @@ class Root extends React.Component{
         <p className='with-border'><img src={Logo} alt='logo' /></p>
 
         <h2>Articles</h2>
-        <ArticleList articles={this.props.articles} loadArticles={this.props.loadArticles} />
+        <ArticleList
+          articles={this.props.articles}
+          loadArticles={this.props.loadArticles}
+          markAsRead={this.props.markAsRead}
+        />
       </div>
     )
   }
