@@ -1,7 +1,7 @@
 import Article from 'models/Article';
 
-export function loadArticles() {
- return (dispatch) => {
+export const loadArticles = () => (
+  (dispatch) => {
     Article.all({resource: 'main'})
     .then((resp) => {
       dispatch(addArticles(resp.resources));
@@ -10,18 +10,16 @@ export function loadArticles() {
       console.log("Failed!", error);
     });
   }
-}
+);
 
-export function addArticles(articles) {
-  return {
-    type: 'ADD_ARTICLES',
+export const addArticles = articles => (
+  { type: 'ADD_ARTICLES',
     articles
   }
-}
+);
 
-export function markAsRead(id) {
-  return {
-    type: 'MARK_AS_READ',
+export const markAsRead = id => (
+  { type: 'MARK_AS_READ',
     id: id
   }
-}
+)
