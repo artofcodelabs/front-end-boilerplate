@@ -1,10 +1,18 @@
 import React from 'react';
+
 import Nav from 'components/shared/Nav';
+import ArticleList from './articles/List';
+import Footer from './Footer';
+
 import {square} from 'helpers/math';
 import Logo from 'logo.png';
-import ArticleList from './articles/List';
 
 class Root extends React.Component{
+  footer(){
+    if(this.props.articles.length > 0)
+      return <Footer />
+  }
+
   render(){
     return(
       <div>
@@ -20,6 +28,8 @@ class Root extends React.Component{
           loadArticles={this.props.loadArticles}
           markAsRead={this.props.markAsRead}
         />
+
+        {this.footer()}
       </div>
     )
   }
