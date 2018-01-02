@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from './Link';
+import FilterLink from 'containers/page1/FilterLink';
 
 const Footer = () => (
   <div>
@@ -10,30 +10,21 @@ const Footer = () => (
 
       {' '}
 
-      <Link
-        active={true}
-        onClick={() => (console.log('all clicked'))}
-      >
+      <FilterLink filter="SHOW_ALL">
         All
-      </Link>
+      </FilterLink>
 
       {', '}
 
-      <Link
-        active={false}
-        onClick={() => (console.log('read clicked'))}
-      >
+      <FilterLink filter="SHOW_READ">
         Read
-      </Link>
+      </FilterLink>
 
       {', '}
 
-      <Link
-        active={false}
-        onClick={() => (console.log('unread clicked'))}
-      >
+      <FilterLink filter="SHOW_UNREAD">
         Unread
-      </Link>
+      </FilterLink>
     </p>
   </div>
 );

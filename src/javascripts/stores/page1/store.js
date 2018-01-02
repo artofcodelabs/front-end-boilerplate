@@ -3,9 +3,6 @@ import thunk from 'redux-thunk';
 
 import rootReducer from 'reducers/page1/index';
 
-const defaultState = {
-  articles: []
-};
-const store = createStore(rootReducer, defaultState, applyMiddleware(thunk));
+const store = createStore(rootReducer, {}, applyMiddleware(thunk));
 
 export default store;
