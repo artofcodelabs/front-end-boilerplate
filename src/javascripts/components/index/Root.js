@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import ReactRouterPropTypes from 'react-router-prop-types';
+
 import Nav from 'components/shared/Nav';
 import * as mathFunc from 'helpers/math';
 
@@ -41,5 +44,9 @@ class Root extends React.Component {
     )
   }
 }
+
+Root.propTypes = {
+  match: ReactRouterPropTypes.match.isRequired,
+};
 
 export default Root;

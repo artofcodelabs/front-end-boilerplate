@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
+import ArticleModel from 'models/Article';
 import Nav from 'components/shared/Nav';
 import ArticleList from './articles/List';
 import Footer from './Footer';
@@ -14,6 +16,7 @@ class Root extends React.Component{
   }
 
   render(){
+    const {articles, loadArticles, markAsRead} = this.props;
     return(
       <div>
         <Nav page='page1' />
@@ -24,9 +27,9 @@ class Root extends React.Component{
 
         <h2>Articles</h2>
         <ArticleList
-          articles={this.props.articles}
-          loadArticles={this.props.loadArticles}
-          markAsRead={this.props.markAsRead}
+          articles={articles}
+          loadArticles={loadArticles}
+          markAsRead={markAsRead}
         />
 
         {this.footer()}
@@ -34,5 +37,13 @@ class Root extends React.Component{
     )
   }
 }
+
+Root.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.instanceOf(ArticleModel)
+  ).isRequired,
+  loadArticles: PropTypes.func,
+  markAsRead: PropTypes.func
+};
 
 export default Root;

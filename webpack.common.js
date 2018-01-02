@@ -33,7 +33,9 @@ module.exports = {
   },
   entry: {
     vendor: [
-      'react', 'react-dom', 'react-router-dom', 'loco-js-model', 'redux', 'react-redux', 'redux-thunk'
+      'react', 'react-dom', 'react-router-dom',
+      'loco-js-model', 'redux', 'react-redux',
+      'redux-thunk', 'react-router-prop-types'
     ],
     index: './src/index',
     page1: './src/page1'

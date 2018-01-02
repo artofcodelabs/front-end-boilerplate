@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+import ArticleModel from 'models/Article';
 import Article from './Article';
 
 class List extends React.Component{
@@ -33,5 +36,12 @@ class List extends React.Component{
     )
   }
 }
+
+List.propTypes = {
+  articles: PropTypes.arrayOf(
+    PropTypes.instanceOf(ArticleModel)
+  ).isRequired,
+  loadArticles: PropTypes.func
+};
 
 export default List;

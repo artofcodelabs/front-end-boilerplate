@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Nav extends React.Component{
   isOnIndex(){
@@ -58,5 +59,10 @@ class Nav extends React.Component{
     )
   }
 }
+
+Nav.propTypes = {
+  page: PropTypes.string,
+  active: PropTypes.string
+};
 
 export default Nav;
