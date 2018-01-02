@@ -14,10 +14,13 @@ main();
 const router = (
   <BrowserRouter>
     <Switch>
-      <Route exact path='/' component={Root}/>
-      <Route path='/index(.html)?' component={Root}/>
-      <Route path='/(squaring|cubing)(.html)?' render={(props) => <Root {...props} />}/>
-      <Route component={NoMatch}/>
+      <Route exact path='/' component={Root} />
+      <Route path='/index(.html)?' component={Root} />
+      <Route
+        path='/(squaring|cubing)(.html)?'
+        render={props => <Root {...props} />}
+      />
+      <Route component={NoMatch} />
     </Switch>
   </BrowserRouter>
 );

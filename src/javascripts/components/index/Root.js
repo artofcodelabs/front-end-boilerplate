@@ -3,50 +3,17 @@ import PropTypes from 'prop-types';
 import ReactRouterPropTypes from 'react-router-prop-types';
 
 import Nav from 'components/shared/Nav';
-import * as mathFunc from 'helpers/math';
+import Calcs from './Calcs';
 
-class Root extends React.Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      active: props.match.params[0]
-    };
-  }
-
-  body(){
-    if(this.state.active === 'squaring')
-      return this.squared()
-    else if(this.state.active === 'cubing')
-      return this.cubed()
-    else
-      return(
-        <div>
-          {this.cubed()}
-          {this.squared()}
-        </div>
-      )
-  }
-
-  cubed(){
-    return <p>{`3 cubed is ${mathFunc.cube(3)}`}</p>;
-  }
-
-  squared(){
-    return <p>{`9 squared is ${mathFunc.square(9)}`}</p>;
-  }
-
-  render(){
-    return (
-      <div>
-        <Nav page='index' active={this.state.active} />
-        {this.body()}
-      </div>
-    )
-  }
-}
+const Root = ({match}) => (
+  <div>
+    <Nav page='index' active={match.params[0]} />
+    <Calcs active={match.params[0]} />
+  </div>
+);
 
 Root.propTypes = {
-  match: ReactRouterPropTypes.match.isRequired,
+  match: ReactRouterPropTypes.match.isRequired
 };
 
 export default Root;
