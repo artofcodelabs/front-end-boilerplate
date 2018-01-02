@@ -5,11 +5,11 @@ import Link from './Link';
 import ArticleModel from 'models/Article';
 import Article from './Article';
 
-const ArticleList = ({articles, onLoadArticlesClick, onMarkAsReadClick}) => (
+const ArticleList = ({articles, showLink, onLoadArticlesClick, onMarkAsReadClick}) => (
   <div>
     <h2>Articles</h2>
 
-    {articles.length === 0
+    {showLink
       ? <Link
           active={false}
           onClick={onLoadArticlesClick}
@@ -33,6 +33,7 @@ ArticleList.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.instanceOf(ArticleModel)
   ).isRequired,
+  showLink: PropTypes.bool.isRequired,
   onLoadArticlesClick: PropTypes.func.isRequired,
   onMarkAsReadClick: PropTypes.func.isRequired
 };

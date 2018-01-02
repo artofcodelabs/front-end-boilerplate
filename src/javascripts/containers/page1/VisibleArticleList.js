@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {loadArticles, markAsRead} from 'actions/page1/articles';
 import ArticleList from 'components/page1/ArticleList';
 
-const getReadArticles = (articles, visibilityFilter) => {
+const getVisibleArticles = (articles, visibilityFilter) => {
   switch(visibilityFilter){
     case 'SHOW_READ':
       return articles.filter(a => a.read)
@@ -16,7 +16,8 @@ const getReadArticles = (articles, visibilityFilter) => {
 };
 
 const mapStateToProps = state => (
-  { articles: getReadArticles(state.articles, state.visibilityFilter)
+  { articles: getVisibleArticles(state.articles, state.visibilityFilter),
+    showLink: state.articles.length === 0
   }
 );
 
