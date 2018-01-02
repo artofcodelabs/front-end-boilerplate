@@ -9,34 +9,23 @@ import Footer from './Footer';
 import {square} from 'helpers/math';
 import Logo from 'logo.png';
 
-class Root extends React.Component{
-  footer(){
-    if(this.props.articles.length > 0)
-      return <Footer />
-  }
+const Root = ({showFooter}) => (
+  <div>
+    <Nav page='page1' />
 
-  render(){
-    return(
-      <div>
-        <Nav page='page1' />
+    <h2>Assets</h2>
+    <p className='with-background with-border'>{`4 squared is ${square(4)}`}</p>
+    <p className='with-border'><img src={Logo} alt='logo' /></p>
 
-        <h2>Assets</h2>
-        <p className='with-background with-border'>{`4 squared is ${square(4)}`}</p>
-        <p className='with-border'><img src={Logo} alt='logo' /></p>
+    <h2>Articles</h2>
+    <VisibleArticleList />
 
-        <h2>Articles</h2>
-        <VisibleArticleList />
-
-        {this.footer()}
-      </div>
-    )
-  }
-}
+    {showFooter ? <Footer /> : ''}
+  </div>
+);
 
 Root.propTypes = {
-  articles: PropTypes.arrayOf(
-    PropTypes.instanceOf(ArticleModel)
-  ).isRequired
+  showFooter: PropTypes.bool.isRequired
 };
 
 export default Root;

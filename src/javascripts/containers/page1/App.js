@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import Root from 'components/page1/Root';
 
 const mapStateToProps = state => (
-  { articles: state.articles
+  { showFooter: state.articles.length > 0
   }
 );
 
