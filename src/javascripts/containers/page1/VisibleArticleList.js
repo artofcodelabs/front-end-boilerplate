@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 
-import {loadArticles, markAsRead} from 'actions/index';
+import {loadArticles, markAsRead} from 'actions/page1/index';
 import ArticleList from 'components/page1/ArticleList';
 
 const mapStateToProps = state => (

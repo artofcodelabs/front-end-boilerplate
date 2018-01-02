@@ -3,7 +3,7 @@ import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 
 import {main} from 'helpers/common.js'
-import store from 'store';
+import store from 'stores/page1/store';
 import App from 'containers/page1/App';
 
 import 'shared/index.css';
