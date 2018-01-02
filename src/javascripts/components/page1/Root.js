@@ -9,11 +9,8 @@ import Footer from './Footer';
 const Root = ({showFooter}) => (
   <div>
     <Nav page='page1' />
-
     <Assets />
-
     <VisibleArticleList />
-
     {showFooter ? <Footer /> : ''}
   </div>
 );
