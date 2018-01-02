@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import ArticleModel from 'models/Article';
 import Nav from 'components/shared/Nav';
-import ArticleList from 'containers/page1/ArticleList';
+import ArticleList from 'components/page1/ArticleList';
 import Footer from './Footer';
 
 import {square} from 'helpers/math';

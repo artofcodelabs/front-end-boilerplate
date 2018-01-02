@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ArticleModel from 'models/Article';
-import Article from 'components/page1/Article';
+import Article from './Article';
 
 class ArticleList extends React.Component{
   link(){
