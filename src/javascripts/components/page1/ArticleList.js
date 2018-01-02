@@ -16,11 +16,12 @@ const ArticleList = ({articles, onLoadArticlesClick, onMarkAsReadClick}) => (
         </Link>
       : ''
     }
+
     {articles.map(article =>
       <Article
         key={article.id}
         {...article}
-        markAsRead={onMarkAsReadClick}
+        onMarkAsReadClick={onMarkAsReadClick}
       />
     )}
   </div>
