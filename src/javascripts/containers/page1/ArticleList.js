@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ArticleModel from 'models/Article';
-import Article from './Article';
+import Article from 'components/page1/Article';
 
-class List extends React.Component{
+class ArticleList extends React.Component{
   link(){
     if(this.props.articles.length > 0)
       return
@@ -37,11 +37,11 @@ class List extends React.Component{
   }
 }
 
-List.propTypes = {
+ArticleList.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.instanceOf(ArticleModel)
   ).isRequired,
   loadArticles: PropTypes.func
 };
 
-export default List;
+export default ArticleList;
