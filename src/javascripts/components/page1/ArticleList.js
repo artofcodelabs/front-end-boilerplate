@@ -1,41 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Link from './Link';
 import ArticleModel from 'models/Article';
 import Article from './Article';
 
-class ArticleList extends React.Component{
-  link(){
-    if(this.props.articles.length > 0)
-      return
-    return(
-      <a
-        href=''
-        onClick={e => {
-          e.preventDefault()
-          this.props.onLoadArticlesClick()
-        }}
-      >
-        Load Articles
-      </a>
-    )
-  }
-
-  render(){
-    return(
-      <div>
-        {this.link()}
-        {this.props.articles.map(article =>
-          <Article
-            key={article.id}
-            {...article}
-            markAsRead={this.props.onMarkAsReadClick}
-          />
-        )}
-      </div>
-    )
-  }
-}
+const ArticleList = ({articles, onLoadArticlesClick, onMarkAsReadClick}) => (
+  <div>
+    { articles.length == 0 ?
+        <Link
+          active={false}
+          onClick={onLoadArticlesClick}
+        >
+          Load Articles
+        </Link>
+      :
+        ''
+    }
+    {articles.map(article =>
+      <Article
+        key={article.id}
+        {...article}
+        markAsRead={onMarkAsReadClick}
+      />
+    )}
+  </div>
+);
 
 ArticleList.propTypes = {
   articles: PropTypes.arrayOf(
