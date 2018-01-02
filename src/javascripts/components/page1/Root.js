@@ -16,7 +16,6 @@ class Root extends React.Component{
   }
 
   render(){
-    const {articles, loadArticles, markAsRead} = this.props;
     return(
       <div>
         <Nav page='page1' />
@@ -37,9 +36,7 @@ class Root extends React.Component{
 Root.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.instanceOf(ArticleModel)
-  ).isRequired,
-  loadArticles: PropTypes.func.isRequired,
-  markAsRead: PropTypes.func.isRequired
+  ).isRequired
 };
 
 export default Root;
