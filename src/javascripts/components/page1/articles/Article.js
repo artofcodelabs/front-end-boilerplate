@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Article extends React.Component{
   markAsReadLink(){
@@ -33,5 +34,14 @@ class Article extends React.Component{
     )
   }
 }
+
+Article.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  publishedAt: PropTypes.instanceOf(Date).isRequired,
+  content: PropTypes.string.isRequired,
+  read: PropTypes.bool.isRequired,
+};
 
 export default Article;
