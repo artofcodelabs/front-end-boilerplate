@@ -7,6 +7,8 @@ import Article from './Article';
 
 const ArticleList = ({articles, onLoadArticlesClick, onMarkAsReadClick}) => (
   <div>
+    <h2>Articles</h2>
+
     {articles.length == 0
       ? <Link
           active={false}
