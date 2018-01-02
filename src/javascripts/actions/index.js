@@ -22,4 +22,4 @@ export const markAsRead = id => (
   { type: 'MARK_AS_READ',
     id: id
   }
-)
+);

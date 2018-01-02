@@ -13,7 +13,7 @@ class ArticleList extends React.Component{
         href=''
         onClick={e => {
           e.preventDefault()
-          this.props.loadArticles()
+          this.props.onLoadArticlesClick()
         }}
       >
         Load Articles
@@ -29,7 +29,7 @@ class ArticleList extends React.Component{
           <Article
             key={article.id}
             {...article}
-            markAsRead={this.props.markAsRead}
+            markAsRead={this.props.onMarkAsReadClick}
           />
         )}
       </div>
@@ -41,7 +41,8 @@ ArticleList.propTypes = {
   articles: PropTypes.arrayOf(
     PropTypes.instanceOf(ArticleModel)
   ).isRequired,
-  loadArticles: PropTypes.func
+  onLoadArticlesClick: PropTypes.func.isRequired,
+  onMarkAsReadClick: PropTypes.func.isRequired
 };
 
 export default ArticleList;

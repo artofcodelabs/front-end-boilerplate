@@ -42,6 +42,7 @@ Article.propTypes = {
   publishedAt: PropTypes.instanceOf(Date).isRequired,
   content: PropTypes.string.isRequired,
   read: PropTypes.bool.isRequired,
+  markAsRead: PropTypes.func.isRequired
 };
 
 export default Article;
