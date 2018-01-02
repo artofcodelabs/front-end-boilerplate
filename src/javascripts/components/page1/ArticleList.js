@@ -7,15 +7,14 @@ import Article from './Article';
 
 const ArticleList = ({articles, onLoadArticlesClick, onMarkAsReadClick}) => (
   <div>
-    { articles.length == 0 ?
-        <Link
-          active={false}
-          onClick={onLoadArticlesClick}
-        >
-          Load Articles
-        </Link>
-      :
-        ''
+    { articles.length == 0
+        ? <Link
+            active={false}
+            onClick={onLoadArticlesClick}
+          >
+            Load Articles
+          </Link>
+        : ''
     }
     {articles.map(article =>
       <Article
