@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 
 import {main} from 'helpers/common.js'
 import store from 'store';
-import App from 'components/page1/App';
+import App from 'containers/page1/App';
 
 import 'shared/index.css';
 import 'page1.sass';
