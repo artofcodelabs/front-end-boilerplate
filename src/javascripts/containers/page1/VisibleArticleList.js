@@ -21,11 +21,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onLoadArticlesClick: () => {
-    dispatch(loadArticles())
+  onLoadArticlesClick() {
+    dispatch(loadArticles());
   },
-  onMarkAsReadClick: id => {
-    dispatch(markAsRead(id))
+  onMarkAsReadClick(id) {
+    dispatch(markAsRead(id));
   }
 });
 
