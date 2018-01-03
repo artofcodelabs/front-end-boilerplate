@@ -25,6 +25,11 @@ const router = (
   </BrowserRouter>
 );
 
-const RootComponent = isProd() ? <Root match={{params: []}}/> : router;
+const RootComponent = isProd()
+  ? <Root match={{params: []}} />
+  : router;
 
-ReactDOM.render(RootComponent, document.getElementById('root'));
+ReactDOM.render(
+  RootComponent,
+  document.getElementById('root')
+);
