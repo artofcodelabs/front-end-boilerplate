@@ -7,8 +7,8 @@ import Calcs from './Calcs';
 
 const Root = ({match}) => (
   <div>
-    <Nav page='index' active={match.params[0] || 'index'} />
-    <Calcs active={match.params[0]} />
+    <Nav page='index' active={match.params[0]} />
+    <Calcs active={match.params[0] || 'index'} />
   </div>
 );
 

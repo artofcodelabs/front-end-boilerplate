@@ -27,7 +27,7 @@ const Calcs = ({active}) => {
 };
 
 Calcs.propTypes = {
-  active: PropTypes.string
+  active: PropTypes.string.isRequired
 };
 
 export default Calcs;

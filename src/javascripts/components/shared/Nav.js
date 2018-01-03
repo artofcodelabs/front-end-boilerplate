@@ -62,7 +62,7 @@ class Nav extends React.Component{
 
 Nav.propTypes = {
   page: PropTypes.string,
-  active: PropTypes.string.isRequired
+  active: PropTypes.string
 };
 
 export default Nav;
