@@ -20,15 +20,11 @@ const mapStateToProps = state => ({
   showLink: state.articles.length === 0
 });
 
-const mapDispatchToProps = dispatch => ({
-  onLoadArticlesClick() {
-    dispatch(loadArticles());
-  },
-  onMarkAsReadClick(id) {
-    dispatch(markAsRead(id));
+const VisibleArticleList = connect(
+  mapStateToProps,
+  { onLoadArticlesClick: loadArticles,
+    onMarkAsReadClick: markAsRead
   }
-});
-
-const VisibleArticleList = connect(mapStateToProps, mapDispatchToProps)(ArticleList);
+)(ArticleList);
 
 export default VisibleArticleList;
