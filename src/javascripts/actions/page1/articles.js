@@ -1,14 +1,13 @@
 import Article from 'models/Article';
 
 export const loadArticles = () => (
-  (dispatch) => {
-    Article.all({resource: 'main'})
-    .then((resp) => {
+  async (dispatch) => {
+    try {
+      const resp = await Article.all({resource: 'main'});
       dispatch(addArticles(resp.resources));
-    })
-    .catch((error) => {
+    } catch(error) {
       console.log("Failed!", error);
-    });
+    }
   }
 );
 
