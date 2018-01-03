@@ -12,14 +12,12 @@ export const loadArticles = () => (
   }
 );
 
-export const addArticles = articles => (
-  { type: 'ADD_ARTICLES',
-    articles
-  }
-);
+export const addArticles = articles => ({
+  type: 'ADD_ARTICLES',
+  articles
+});
 
-export const markAsRead = id => (
-  { type: 'MARK_AS_READ',
-    id: id
-  }
-);
+export const markAsRead = id => ({
+  type: 'MARK_AS_READ',
+  id: id
+});

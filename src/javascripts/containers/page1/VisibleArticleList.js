@@ -15,21 +15,19 @@ const getVisibleArticles = (articles, visibilityFilter) => {
   }
 };
 
-const mapStateToProps = state => (
-  { articles: getVisibleArticles(state.articles, state.visibilityFilter),
-    showLink: state.articles.length === 0
-  }
-);
+const mapStateToProps = state => ({
+  articles: getVisibleArticles(state.articles, state.visibilityFilter),
+  showLink: state.articles.length === 0
+});
 
-const mapDispatchToProps = dispatch => (
-  { onLoadArticlesClick: () => {
-      dispatch(loadArticles())
-    },
-    onMarkAsReadClick: id => {
-      dispatch(markAsRead(id))
-    }
+const mapDispatchToProps = dispatch => ({
+  onLoadArticlesClick: () => {
+    dispatch(loadArticles())
+  },
+  onMarkAsReadClick: id => {
+    dispatch(markAsRead(id))
   }
-);
+});
 
 const VisibleArticleList = connect(mapStateToProps, mapDispatchToProps)(ArticleList);
 
