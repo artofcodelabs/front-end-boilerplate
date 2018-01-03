@@ -14,3 +14,15 @@ const articles = (state = [], action) => {
 };
 
 export default articles;
+
+export const getVisibleArticles = (state, filter) => {
+  switch(filter){
+    case 'SHOW_READ':
+      return state.filter(a => a.read)
+    case 'SHOW_UNREAD':
+      return state.filter(a => !a.read)
+    case 'SHOW_ALL':
+    default:
+      return state
+  }
+};
