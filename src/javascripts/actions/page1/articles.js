@@ -6,6 +6,7 @@ export const loadArticles = () => (
       const resp = await Article.all({resource: 'main'});
       dispatch(addArticles(resp.resources));
     } catch(error) {
+      alert("Can't connect with server.");
       console.log("Failed!", error);
     }
   }
