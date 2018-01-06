@@ -4,18 +4,18 @@ export const loadArticles = () => (
   async (dispatch) => {
     try {
       const resp = await Article.all({resource: 'main'});
-      dispatch(addArticles(resp.resources));
-    } catch(error) {
-      alert("Can't connect with server.");
-      console.log("Failed!", error);
+      dispatch({
+        type: 'ADD_ARTICLES',
+        articles: resp.resources
+      });
+    } catch(err) {
+      dispatch({
+        type: 'FETCH_ARTICLES_FAILURE',
+        msg: "Something went wrong"
+      });
     }
   }
 );
-
-export const addArticles = articles => ({
-  type: 'ADD_ARTICLES',
-  articles
-});
 
 export const markAsRead = id => ({
   type: 'MARK_AS_READ',

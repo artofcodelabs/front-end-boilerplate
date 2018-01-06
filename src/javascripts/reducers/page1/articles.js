@@ -1,6 +1,8 @@
+import {combineReducers} from 'redux';
+
 import Article from 'models/Article';
 
-const articles = (state = [], action) => {
+const resources = (state = [], action) => {
   switch(action.type){
     case 'ADD_ARTICLES':
       return [...state, ...action.articles]
@@ -13,16 +15,34 @@ const articles = (state = [], action) => {
   }
 };
 
+const errorMsg = (state = null, action) => {
+  switch(action.type){
+    case 'FETCH_ARTICLES_FAILURE':
+      return action.msg
+    default:
+      return state
+  }
+}
+
+const articles = combineReducers({
+  resources,
+  errorMsg
+});
+
 export default articles;
 
 export const getVisibleArticles = (state, filter) => {
   switch(filter){
     case 'SHOW_READ':
-      return state.filter(a => a.read)
+      return state.resources.filter(a => a.read)
     case 'SHOW_UNREAD':
-      return state.filter(a => !a.read)
+      return state.resources.filter(a => !a.read)
     case 'SHOW_ALL':
     default:
-      return state
+      return state.resources
   }
 };
+
+export const anyArticles = state => state.resources.length > 0;
+
+export const getErrorMsg = state => state.errorMsg;

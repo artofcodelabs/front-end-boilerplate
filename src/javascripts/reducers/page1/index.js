@@ -10,10 +10,11 @@ const rootReducer = combineReducers({
 
 export default rootReducer;
 
-export const getVisibleArticles = state => (
-  fromArticles.getVisibleArticles(state.articles, state.visibilityFilter)
-);
+export const getVisibleArticles = state =>
+  fromArticles.getVisibleArticles(state.articles, state.visibilityFilter);
 
-export const shouldShowLoadArticlesLink = state => (
-  state.articles.length === 0
-);
+export const anyArticles = state =>
+  fromArticles.anyArticles(state.articles);
+
+export const getErrorMsg = state =>
+  fromArticles.getErrorMsg(state.articles);

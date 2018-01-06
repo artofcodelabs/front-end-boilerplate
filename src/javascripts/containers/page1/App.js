@@ -1,9 +1,10 @@
 import {connect} from 'react-redux';
 
+import {anyArticles} from 'reducers/page1';
 import Root from 'components/page1/Root';
 
 const mapStateToProps = state => ({
-  showFooter: state.articles.length > 0
+  showFooter: anyArticles(state)
 });
 
 const App = connect(

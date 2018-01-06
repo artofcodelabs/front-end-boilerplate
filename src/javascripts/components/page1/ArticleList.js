@@ -4,10 +4,22 @@ import PropTypes from 'prop-types';
 import Link from './Link';
 import ArticleModel from 'models/Article';
 import Article from './Article';
+import FetchError from './FetchError';
 
-const ArticleList = ({articles, showLink, onLoadArticlesClick, onMarkAsReadClick}) => (
+const ArticleList = ({
+  articles,
+  showLink,
+  onLoadArticlesClick,
+  onMarkAsReadClick,
+  errorMsg
+}) => (
   <div>
     <h2>Articles</h2>
+
+    {errorMsg && !articles.length
+      ? <FetchError msg={errorMsg} />
+      : ''
+    }
 
     {showLink
       ? <Link
@@ -35,7 +47,8 @@ ArticleList.propTypes = {
   ).isRequired,
   showLink: PropTypes.bool.isRequired,
   onLoadArticlesClick: PropTypes.func.isRequired,
-  onMarkAsReadClick: PropTypes.func.isRequired
+  onMarkAsReadClick: PropTypes.func.isRequired,
+  errorMsg: PropTypes.string
 };
 
 export default ArticleList;
