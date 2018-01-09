@@ -3,18 +3,7 @@ const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-const postCssOptions = {
-  // Necessary for external CSS imports to work
-  // https://github.com/facebookincubator/create-react-app/issues/2677
-  ident: "postcss",
-  sourceMap: true,
-  plugins: loader => [
-    require("postcss-flexbugs-fixes"),
-    require("autoprefixer")({
-      flexbox: "no-2009"
-    })
-  ]
-};
+const postCssOptions = require("./postcss.config.js");
 
 module.exports = {
   resolve: {
