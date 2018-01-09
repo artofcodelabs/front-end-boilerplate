@@ -1,14 +1,14 @@
-const fs = require('fs');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const MinifyPlugin = require('babel-minify-webpack-plugin');
-const common = require('./webpack.common.js');
+const fs = require("fs");
+const webpack = require("webpack");
+const merge = require("webpack-merge");
+const MinifyPlugin = require("babel-minify-webpack-plugin");
+const common = require("./webpack.common.js");
 
 const appDirectory = fs.realpathSync(process.cwd());
 
 const styleLoaders = [
   {
-    loader: 'css-loader',
+    loader: "css-loader",
     options: {
       minimize: true
     }
@@ -16,7 +16,7 @@ const styleLoaders = [
 ];
 
 const config = merge.smart(common, {
-  devtool: 'source-map',
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -31,16 +31,16 @@ const config = merge.smart(common, {
         test: /\.(png|svg|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
               gifsicle: {
-                interlaced: false,
+                interlaced: false
               },
               optipng: {
-                optimizationLevel: 7,
+                optimizationLevel: 7
               },
               pngquant: {
-                quality: '65-90',
+                quality: "65-90",
                 speed: 4
               },
               mozjpeg: {
@@ -60,9 +60,9 @@ const config = merge.smart(common, {
   plugins: [
     new MinifyPlugin(),
     new webpack.DefinePlugin({
-      'process.env': {
-        'NODE_ENV': JSON.stringify('production'),
-        'BABEL_ENV': JSON.stringify('production')
+      "process.env": {
+        NODE_ENV: JSON.stringify("production"),
+        BABEL_ENV: JSON.stringify("production")
       }
     })
   ],

@@ -1,12 +1,8 @@
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 
-import {
-  getVisibleArticles,
-  anyArticles,
-  getErrorMsg
-} from 'reducers/page1';
-import {loadArticles, markAsRead} from 'actions/page1/articles';
-import ArticleList from 'components/page1/ArticleList';
+import { getVisibleArticles, anyArticles, getErrorMsg } from "reducers/page1";
+import { loadArticles, markAsRead } from "actions/page1/articles";
+import ArticleList from "components/page1/ArticleList";
 
 const mapStateToProps = state => ({
   articles: getVisibleArticles(state),
@@ -14,11 +10,9 @@ const mapStateToProps = state => ({
   errorMsg: getErrorMsg(state)
 });
 
-const VisibleArticleList = connect(
-  mapStateToProps,
-  { onLoadArticlesClick: loadArticles,
-    onMarkAsReadClick: markAsRead
-  }
-)(ArticleList);
+const VisibleArticleList = connect(mapStateToProps, {
+  onLoadArticlesClick: loadArticles,
+  onMarkAsReadClick: markAsRead
+})(ArticleList);
 
 export default VisibleArticleList;
