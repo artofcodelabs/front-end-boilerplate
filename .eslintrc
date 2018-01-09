@@ -1,7 +1,15 @@
 {
-  "extends": ["eslint-config-airbnb-base", "prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "eslint-config-airbnb-base",
+    "prettier"
+  ],
 
-  "plugins": ["prettier"],
+  "plugins": [
+    "prettier",
+    "react"
+  ],
 
   "env": {
     "browser": true
@@ -13,12 +21,23 @@
 
   "parser": "babel-eslint",
 
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+
   "settings": {
     "import/resolver": {
       "webpack": {
         "config": {
           "resolve": {
-            "modules": ["src", "node_modules"]
+            "modules": [
+              "src/javascripts",
+              "src/css",
+              "src/images",
+              "node_modules"
+            ]
           }
         }
       }

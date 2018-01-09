@@ -1,19 +1,14 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const merge = require("webpack-merge");
+const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   entry: {
-    index: [
-      './src/index'
-    ],
-    page1: [
-      './src/page1'
-    ]
+    index: ["./src/index"],
+    page1: ["./src/page1"]
   },
-  plugins: [
-  ],
+  plugins: [],
   output: {
-    publicPath: '/assets/'
+    publicPath: "/assets/"
   }
 });

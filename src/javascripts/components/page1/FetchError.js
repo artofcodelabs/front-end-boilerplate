@@ -1,19 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const FetchError = ({msg, onRetry}) => (
+const FetchError = ({ msg, onRetry }) => (
   <div>
-    <p style={{color: 'red'}}>{msg}</p>
-    {onRetry
-      ? <button onClick={onRetry}>Retry</button>
-      : ''
-    }
+    <p style={{ color: "red" }}>{msg}</p>
+    {onRetry ? <button onClick={onRetry}>Retry</button> : ""}
   </div>
 );
 
 FetchError.propTypes = {
   msg: PropTypes.string.isRequired,
-  onRetry: PropTypes.func,
+  onRetry: PropTypes.func
 };
 
 export default FetchError;

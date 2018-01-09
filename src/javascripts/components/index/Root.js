@@ -1,14 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ReactRouterPropTypes from 'react-router-prop-types';
+import React from "react";
+import ReactRouterPropTypes from "react-router-prop-types";
 
-import Nav from 'components/shared/Nav';
-import Calcs from './Calcs';
+import Nav from "components/shared/Nav";
+import Calcs from "./Calcs";
 
-const Root = ({match}) => (
+const Root = ({ match }) => (
   <div>
-    <Nav page='index' active={match.params[0]} />
-    <Calcs active={match.params[0] || 'index'} />
+    <Nav page="index" active={match.params[0]} />
+    <Calcs active={match.params[0] || "index"} />
   </div>
 );
 

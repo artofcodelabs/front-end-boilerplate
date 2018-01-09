@@ -1,3 +1,3 @@
-import {Config} from 'loco-js-model';
+import { Config } from "loco-js-model";
 
-Config.protocolWithHost = 'http://localhost:3000';
+Config.protocolWithHost = "http://localhost:3000";

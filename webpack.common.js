@@ -1,43 +1,43 @@
-const path = require('path');
-const webpack = require('webpack');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require("path");
+const webpack = require("webpack");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const postCssOptions = {
   // Necessary for external CSS imports to work
   // https://github.com/facebookincubator/create-react-app/issues/2677
-  ident: 'postcss',
+  ident: "postcss",
   sourceMap: true,
-  plugins: (loader) => [
-    require('postcss-flexbugs-fixes'),
-    require('autoprefixer')({
-      flexbox: 'no-2009'
+  plugins: loader => [
+    require("postcss-flexbugs-fixes"),
+    require("autoprefixer")({
+      flexbox: "no-2009"
     })
   ]
-}
+};
 
 module.exports = {
   resolve: {
     modules: [
-      path.join(__dirname, 'src', 'javascripts'),
-      path.join(__dirname, 'src', 'css'),
-      path.join(__dirname, 'src', 'images'),
+      path.join(__dirname, "src", "javascripts"),
+      path.join(__dirname, "src", "css"),
+      path.join(__dirname, "src", "images"),
       "node_modules"
     ]
   },
   entry: {
     vendor: [
-      'react',
-      'react-dom',
-      'react-router-dom',
-      'react-router-prop-types',
-      'redux',
-      'react-redux',
-      'redux-thunk',
-      'loco-js-model'
+      "react",
+      "react-dom",
+      "react-router-dom",
+      "react-router-prop-types",
+      "redux",
+      "react-redux",
+      "redux-thunk",
+      "loco-js-model"
     ],
-    index: './src/index',
-    page1: './src/page1'
+    index: "./src/index",
+    page1: "./src/page1"
   },
   module: {
     rules: [
@@ -45,28 +45,28 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: "babel-loader"
         }
       },
       {
         test: /\.(styl|css)$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: "style-loader",
           use: [
-            {loader: 'css-loader'},
-            {loader: 'postcss-loader', options: postCssOptions},
-            {loader: 'stylus-loader'}
+            { loader: "css-loader" },
+            { loader: "postcss-loader", options: postCssOptions },
+            { loader: "stylus-loader" }
           ]
         })
       },
       {
         test: /\.(sass|scss)$/,
         use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
+          fallback: "style-loader",
           use: [
-            {loader: 'css-loader'},
-            {loader: 'postcss-loader', options: postCssOptions},
-            {loader: 'sass-loader'}
+            { loader: "css-loader" },
+            { loader: "postcss-loader", options: postCssOptions },
+            { loader: "sass-loader" }
           ]
         })
       },
@@ -74,33 +74,31 @@ module.exports = {
         test: /\.(png|svg|jpe?g|gif)$/i,
         use: [
           {
-            loader: 'url-loader',
+            loader: "url-loader",
             options: {
               limit: 8192,
-              fallback: 'file-loader'
+              fallback: "file-loader"
             }
           }
         ]
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader'
-        ]
+        use: ["file-loader"]
       }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['public/assets'], {
+    new CleanWebpackPlugin(["public/assets"], {
       exclude: [],
       verbose: true,
       dry: false
     }),
     new webpack.optimize.CommonsChunkPlugin({
-			// The order of this array matters
-			names: ["common", "vendor"],
-			minChunks: 2
-		}),
+      // The order of this array matters
+      names: ["common", "vendor"],
+      minChunks: 2
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: "manifest",
       minChunks: Infinity
@@ -110,7 +108,7 @@ module.exports = {
     })
   ],
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'public/assets')
+    filename: "[name].js",
+    path: path.resolve(__dirname, "public/assets")
   }
 };

@@ -1,29 +1,37 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import Link from './Link';
+import Link from "./Link";
 
-const Article = ({id, title, author, publishedAt, content, read, onMarkAsReadClick}) => (
+const Article = ({
+  id,
+  title,
+  author,
+  publishedAt,
+  content,
+  read,
+  onMarkAsReadClick
+}) => (
   <article id={`article_${id}`}>
     <h3>{title}</h3>
 
     <p>
-      <i>{author} wrote this on {publishedAt.toLocaleDateString('pl')}</i>
+      <i>
+        {author} wrote this on {publishedAt.toLocaleDateString("pl")}
+      </i>
     </p>
 
     <p>{content}</p>
 
-    {!read
-      ? <p>
-          <Link
-            active={false}
-            onClick={onMarkAsReadClick.bind(null, id)}
-          >
-            Mark as read
-          </Link>
-        </p>
-      : ''
-    }
+    {!read ? (
+      <p>
+        <Link active={false} onClick={onMarkAsReadClick.bind(null, id)}>
+          Mark as read
+        </Link>
+      </p>
+    ) : (
+      ""
+    )}
   </article>
 );
 

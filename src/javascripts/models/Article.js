@@ -1,15 +1,18 @@
-import {Base} from 'loco-js-model';
+import { Base } from "loco-js-model";
 
-class Article extends Base{
+class Article extends Base {
   static identity = "Article";
 
   static resources = {
-    url: '/user/articles', paginate: {per: 5},
+    url: "/user/articles",
+    paginate: { per: 5 },
     main: {
-      url: '/articles', paginate: {per: 3}
+      url: "/articles",
+      paginate: { per: 3 }
     },
     admin: {
-      url: '/admin/articles', paginate: {per: 4}
+      url: "/admin/articles",
+      paginate: { per: 4 }
     }
   };
 
@@ -17,13 +20,13 @@ class Article extends Base{
     title: {
       validations: {
         presence: true,
-        length: {within: [3, 255]}
+        length: { within: [3, 255] }
       }
     },
     content: {
       validations: {
         presence: true,
-        length: {minimum: 100}
+        length: { minimum: 100 }
       },
       remoteName: "text"
     },
@@ -62,19 +65,24 @@ class Article extends Base{
 
   static validate = ["vulgarityLevel"];
 
-  constructor(data){
+  constructor(data) {
     super(data);
-    this.published = this.publishedAt ? true : false;
-    this.read = this.read ? true : false;
+    this.published = this.publishedAt !== null;
+    this.read = this.read !== undefined;
   }
 
-  vulgarityLevel(){
-    if((this.title && /fuck/i.exec(this.title)) || (this.content && /fuck/i.exec(this.content))){
-      addErrorMessage("Article contains strong language.", {for: 'base'});
+  vulgarityLevel() {
+    if (
+      (this.title && /fuck/i.exec(this.title)) ||
+      (this.content && /fuck/i.exec(this.content))
+    ) {
+      this.addErrorMessage("Article contains strong language.", {
+        for: "base"
+      });
     }
   }
 
-  setDefaultValuesForAdminReview(){
+  setDefaultValuesForAdminReview() {
     this.adminRate = this.adminRate == null ? 3 : this.adminRate;
     this.categoryId = this.categoryId == null ? 6 : this.categoryId;
     this.adminReviewStartedAt = Date.now();
