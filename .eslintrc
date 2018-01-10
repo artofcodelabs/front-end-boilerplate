@@ -8,11 +8,13 @@
 
   "plugins": [
     "prettier",
-    "react"
+    "react",
+    "jest"
   ],
 
   "env": {
-    "browser": true
+    "browser": true,
+    "jest/globals": true
   },
 
   "rules": {

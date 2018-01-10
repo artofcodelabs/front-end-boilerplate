@@ -9,7 +9,7 @@
     "eslint",
     "git add"
   ],
-  "__test__/**/*.js": [
+  "__tests__/**/*.js": [
     "prettier --write",
     "eslint",
     "git add"
