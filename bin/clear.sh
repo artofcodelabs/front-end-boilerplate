@@ -2,6 +2,7 @@
 
 rm MIT-LICENSE
 
+rm __tests__/javascripts/models/*
 rm -r dev/server_responses
 
 rm public/cubing.html
