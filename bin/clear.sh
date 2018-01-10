@@ -31,6 +31,8 @@ cat dev/router.js \
   | awk -v regex="squaring" -v count="9" '$0 ~ regex { skip=count; next } --skip >= 0 { next } 1' \
   | tee dev/router.js
 
-rm -rf .git
+if [ -d ".git" ]; then
+  rm -rf .git
+fi
 
 echo Cleared!
