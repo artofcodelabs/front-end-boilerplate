@@ -9,6 +9,11 @@
     "eslint",
     "git add"
   ],
+  "__test__/**/*.js": [
+    "prettier --write",
+    "eslint",
+    "git add"
+  ],
   "src/**/*.css": [
     "prettier --write",
     "stylelint --fix",

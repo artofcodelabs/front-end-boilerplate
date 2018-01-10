@@ -16,14 +16,15 @@ module.exports = {
   },
   entry: {
     vendor: [
+      "loco-js-model",
+      "prop-types",
       "react",
       "react-dom",
+      "react-redux",
       "react-router-dom",
       "react-router-prop-types",
       "redux",
-      "react-redux",
-      "redux-thunk",
-      "loco-js-model"
+      "redux-thunk"
     ],
     index: "./src/index",
     page1: "./src/page1"
