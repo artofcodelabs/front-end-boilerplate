@@ -71,10 +71,5 @@
     "react-router-prop-types": "0.0.3",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0"
-  },
-  "jest": {
-    "modulePaths": [
-      "src/javascripts"
-    ]
   }
 }
