@@ -1,7 +1,9 @@
 const path = require("path");
+/* eslint-disable import/no-extraneous-dependencies */
 const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+/* eslint-enable import/no-extraneous-dependencies */
 
 const postCssOptions = require("./postcss.config.js");
 
@@ -41,7 +43,6 @@ module.exports = {
       {
         test: /\.(styl|css)$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
           use: [
             { loader: "css-loader" },
             { loader: "postcss-loader", options: postCssOptions },
@@ -52,7 +53,6 @@ module.exports = {
       {
         test: /\.(sass|scss)$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
           use: [
             { loader: "css-loader" },
             { loader: "postcss-loader", options: postCssOptions },

@@ -1,7 +1,9 @@
 const fs = require("fs");
+/* eslint-disable import/no-extraneous-dependencies */
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+/* eslint-enable import/no-extraneous-dependencies */
 const common = require("./webpack.common.js");
 
 const appDirectory = fs.realpathSync(process.cwd());
@@ -15,7 +17,7 @@ const styleLoaders = [
   }
 ];
 
-const config = merge.smart(common, {
+module.exports = merge.smart(common, {
   devtool: "source-map",
   module: {
     rules: [
@@ -70,5 +72,3 @@ const config = merge.smart(common, {
     publicPath: `${appDirectory}/public/assets/`
   }
 });
-
-module.exports = config;
