@@ -18,6 +18,7 @@ const styleLoaders = [
 ];
 
 module.exports = merge.smart(common, {
+  mode: "production",
   devtool: "source-map",
   module: {
     rules: [

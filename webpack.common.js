@@ -1,8 +1,7 @@
 const path = require("path");
 /* eslint-disable import/no-extraneous-dependencies */
-const webpack = require("webpack");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 /* eslint-enable import/no-extraneous-dependencies */
 
 const postCssOptions = require("./postcss.config.js");
@@ -17,17 +16,6 @@ module.exports = {
     ]
   },
   entry: {
-    vendor: [
-      "loco-js-model",
-      "prop-types",
-      "react",
-      "react-dom",
-      "react-redux",
-      "react-router-dom",
-      "react-router-prop-types",
-      "redux",
-      "redux-thunk"
-    ],
     index: "./src/index",
     page1: "./src/page1"
   },
@@ -42,23 +30,21 @@ module.exports = {
       },
       {
         test: /\.(styl|css)$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            { loader: "css-loader" },
-            { loader: "postcss-loader", options: postCssOptions },
-            { loader: "stylus-loader" }
-          ]
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          { loader: "postcss-loader", options: postCssOptions },
+          { loader: "stylus-loader" }
+        ]
       },
       {
         test: /\.(sass|scss)$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            { loader: "css-loader" },
-            { loader: "postcss-loader", options: postCssOptions },
-            { loader: "sass-loader" }
-          ]
-        })
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          { loader: "postcss-loader", options: postCssOptions },
+          { loader: "sass-loader" }
+        ]
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/i,
@@ -84,19 +70,29 @@ module.exports = {
       verbose: true,
       dry: false
     }),
-    new webpack.optimize.CommonsChunkPlugin({
-      // The order of this array matters
-      names: ["common", "vendor"],
-      minChunks: 2
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "manifest",
-      minChunks: Infinity
-    }),
-    new ExtractTextPlugin({
+    new MiniCssExtractPlugin({
       filename: "[name].css"
     })
   ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          chunks: "initial",
+          minChunks: 2,
+          maxInitialRequests: 5, // The default limit is too small to showcase the effect
+          minSize: 0 // This is example is too small to create commons chunks
+        },
+        vendor: {
+          test: /node_modules/,
+          chunks: "initial",
+          name: "vendor",
+          priority: 10,
+          enforce: true
+        }
+      }
+    }
+  },
   output: {
     filename: "[name].js",
     path: path.resolve(__dirname, "public/assets")
