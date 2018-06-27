@@ -1,7 +1,14 @@
 {
   "presets": [
     ["env", {
-      "modules": false
+      "modules": false,
+      "targets": {
+        "browsers": [
+          "> 1%",
+          "last 1 version",
+          "not dead"
+        ]
+      }
     }],
     "react"
   ],
@@ -12,10 +19,8 @@
   "env": {
     "test": {
       "presets": [
-        ["env", {
-            "modules": "commonjs"
-          }
-        ]
+        ["env"],
+        "react"
       ],
       "plugins": [
         "transform-class-properties",
