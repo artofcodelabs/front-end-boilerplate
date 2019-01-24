@@ -1,5 +1,3 @@
 module.exports = {
-  modulePaths: [
-    "src/javascripts"
-  ]
+  modulePaths: ["src/js"]
 };

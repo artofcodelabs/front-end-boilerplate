@@ -9,7 +9,7 @@ const postCssOptions = require("./postcss.config.js");
 module.exports = {
   resolve: {
     modules: [
-      path.join(__dirname, "src", "javascripts"),
+      path.join(__dirname, "src", "js"),
       path.join(__dirname, "src", "css"),
       path.join(__dirname, "src", "images"),
       "node_modules"

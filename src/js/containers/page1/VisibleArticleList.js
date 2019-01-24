@@ -10,9 +10,12 @@ const mapStateToProps = state => ({
   errorMsg: getErrorMsg(state)
 });
 
-const VisibleArticleList = connect(mapStateToProps, {
-  onLoadArticlesClick: loadArticles,
-  onMarkAsReadClick: markAsRead
-})(ArticleList);
+const VisibleArticleList = connect(
+  mapStateToProps,
+  {
+    onLoadArticlesClick: loadArticles,
+    onMarkAsReadClick: markAsRead
+  }
+)(ArticleList);
 
 export default VisibleArticleList;

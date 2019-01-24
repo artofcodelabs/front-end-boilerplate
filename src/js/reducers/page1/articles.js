@@ -7,11 +7,10 @@ const resources = (state = [], action) => {
     case "ADD_ARTICLES":
       return [...state, ...action.articles];
     case "MARK_AS_READ":
-      return state.map(
-        article =>
-          article.id === action.id
-            ? new Article({ ...article, read: true })
-            : article
+      return state.map(article =>
+        article.id === action.id
+          ? new Article({ ...article, read: true })
+          : article
       );
     default:
       return state;

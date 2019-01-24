@@ -35,7 +35,7 @@
         "config": {
           "resolve": {
             "modules": [
-              "src/javascripts",
+              "src/js",
               "src/css",
               "src/images",
               "node_modules"
