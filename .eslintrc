@@ -1,25 +1,14 @@
 {
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "eslint-config-airbnb-base",
-    "prettier"
-  ],
-
-  "plugins": [
-    "prettier",
-    "react",
-    "jest"
-  ],
-
   "env": {
     "browser": true,
     "jest/globals": true
   },
 
-  "rules": {
-    "prettier/prettier": "error"
-  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
 
   "parser": "babel-eslint",
 
@@ -27,6 +16,16 @@
     "ecmaFeatures": {
       "jsx": true
     }
+  },
+
+  "plugins": [
+    "prettier",
+    "react",
+    "jest"
+  ],
+
+  "rules": {
+    "prettier/prettier": "error"
   },
 
   "settings": {
@@ -43,6 +42,9 @@
           }
         }
       }
+    },
+    "react": {
+      "version": "detect"
     }
   }
 }

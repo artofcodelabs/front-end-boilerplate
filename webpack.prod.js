@@ -1,22 +1,12 @@
+/* eslint-env node */
 const fs = require("fs");
-/* eslint-disable import/no-extraneous-dependencies */
 const webpack = require("webpack");
 const merge = require("webpack-merge");
 const MinifyPlugin = require("babel-minify-webpack-plugin");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
-/* eslint-enable import/no-extraneous-dependencies */
 const common = require("./webpack.common.js");
 
 const appDirectory = fs.realpathSync(process.cwd());
-
-const styleLoaders = [
-  {
-    loader: "css-loader",
-    options: {
-      minimize: true
-    }
-  }
-];
 
 module.exports = merge.smart(common, {
   mode: "production",
@@ -25,11 +15,14 @@ module.exports = merge.smart(common, {
     rules: [
       {
         test: /\.css$/,
-        use: styleLoaders
-      },
-      {
-        test: /\.(sass|scss)$/,
-        use: styleLoaders
+        use: [
+          {
+            loader: "css-loader",
+            options: {
+              minimize: true
+            }
+          }
+        ]
       }
     ]
   },

@@ -10,7 +10,7 @@ This repository contains boilerplate code for everyone who wants to create a **m
 * [**Loco-JS-Model**](https://github.com/locoframework/loco-js-model) - a missing model layer for modern JavaScript. Give it a try - it's a beautiful solution for handling RESTful resources
 * [Babel](https://babeljs.io) - a JavaScript compiler
 * [Webpack](https://webpack.js.org) with plugins - a module bundler
-* [PostCSS](https://github.com/postcss/postcss) and [Sass](https://sass-lang.com) - add a bit of style to your website
+* [PostCSS](https://github.com/postcss/postcss) - add a bit of style to your website
 * [Jest](https://facebook.github.io/jest) - delightful JavaScript testing
 * Linters + [Prettier](https://prettier.io)
 
