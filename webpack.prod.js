@@ -1,7 +1,9 @@
 /* eslint-env node */
+
 const fs = require("fs");
 const merge = require("webpack-merge");
 const ImageminPlugin = require("imagemin-webpack-plugin").default;
+
 const common = require("./webpack.common.js");
 
 const appDirectory = fs.realpathSync(process.cwd());
