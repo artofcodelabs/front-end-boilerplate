@@ -9,21 +9,6 @@ const appDirectory = fs.realpathSync(process.cwd());
 module.exports = merge.smart(common, {
   mode: "production",
   devtool: "source-map",
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: "css-loader",
-            options: {
-              minimize: true
-            }
-          }
-        ]
-      }
-    ]
-  },
   plugins: [
     new ImageminPlugin({
       pngquant: {
