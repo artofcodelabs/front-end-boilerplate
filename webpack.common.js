@@ -29,12 +29,11 @@ module.exports = {
         }
       },
       {
-        test: /\.(styl|css)$/,
+        test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          { loader: "postcss-loader", options: postCssOptions },
-          { loader: "stylus-loader" }
+          { loader: "postcss-loader", options: postCssOptions }
         ]
       },
       {

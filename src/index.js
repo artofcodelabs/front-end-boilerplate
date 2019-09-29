@@ -7,7 +7,7 @@ import Root from "components/index/Root";
 import NoMatch from "components/index/NoMatch";
 
 import "shared/index.css";
-import "index.styl";
+import "index.css";
 
 main();
 
