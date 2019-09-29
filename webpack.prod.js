@@ -6,7 +6,7 @@ const common = require("./webpack.common.js");
 
 const appDirectory = fs.realpathSync(process.cwd());
 
-module.exports = merge.smart(common, {
+module.exports = merge(common, {
   mode: "production",
   devtool: "source-map",
   plugins: [

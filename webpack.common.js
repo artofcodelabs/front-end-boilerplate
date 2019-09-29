@@ -1,7 +1,7 @@
 /* eslint-env node */
 
 const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const postCssOptions = require("./postcss.config.js");
 
@@ -54,11 +54,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(["public/assets"], {
-      exclude: [],
-      verbose: true,
-      dry: false
-    }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css"
     })
