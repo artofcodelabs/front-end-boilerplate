@@ -1,8 +1,8 @@
+/* eslint-env node */
+
 const path = require("path");
-/* eslint-disable import/no-extraneous-dependencies */
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-/* eslint-enable import/no-extraneous-dependencies */
 
 const postCssOptions = require("./postcss.config.js");
 
@@ -29,21 +29,11 @@ module.exports = {
         }
       },
       {
-        test: /\.(styl|css)$/,
+        test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          { loader: "postcss-loader", options: postCssOptions },
-          { loader: "stylus-loader" }
-        ]
-      },
-      {
-        test: /\.(sass|scss)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          { loader: "postcss-loader", options: postCssOptions },
-          { loader: "sass-loader" }
+          { loader: "postcss-loader", options: postCssOptions }
         ]
       },
       {
@@ -65,11 +55,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(["public/assets"], {
-      exclude: [],
-      verbose: true,
-      dry: false
-    }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css"
     })

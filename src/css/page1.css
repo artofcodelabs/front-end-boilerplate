@@ -1,0 +1,19 @@
+:root {
+  --border-radius: 10px;
+}
+
+body {
+  background: radial-gradient(#eee, #f0f0f0, #fcfcfc);
+}
+
+p {
+  &.with-border {
+    border: 1px solid #666;
+    border-radius: var(--border-radius);
+    filter: grayscale(50%);
+  }
+
+  &.with-background {
+    background: url("../images/background.png");
+  }
+}

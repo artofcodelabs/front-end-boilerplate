@@ -10,7 +10,7 @@ This repository contains boilerplate code for everyone who wants to create a **m
 * [**Loco-JS-Model**](https://github.com/locoframework/loco-js-model) - a missing model layer for modern JavaScript. Give it a try - it's a beautiful solution for handling RESTful resources
 * [Babel](https://babeljs.io) - a JavaScript compiler
 * [Webpack](https://webpack.js.org) with plugins - a module bundler
-* [PostCSS](https://github.com/postcss/postcss), [Sass](https://sass-lang.com) and [Stylus](http://stylus-lang.com) - add a bit of style to your website
+* [PostCSS](https://github.com/postcss/postcss) - add a bit of style to your website
 * [Jest](https://facebook.github.io/jest) - delightful JavaScript testing
 * Linters + [Prettier](https://prettier.io)
 
@@ -24,13 +24,13 @@ This repository also contains an exemplary app showcasing how to use all the lib
 
 It was created by examining _Webpack's_ guides, docs and two excellent Dan Abramov's [courses](https://egghead.io/redux) describing Redux apps.
 
-If you look at [package.json](https://github.com/artofcodelabs/front-end-boilerplate/blob/master/package.json) once more - it has two `npm` scripts dedicated for development and production build.  
+If you look at [package.json](https://github.com/artofcodelabs/front-end-boilerplate/blob/master/package.json) once more - it has two `npm` scripts dedicated for development and production build.
 For this exemplary app, the production build is not a production-ready version of the app, though. When you open a static file from the `public` directory in the browser, the whole app lacks some functionalities. It requires proper deployment with app server running on specified port and routing.
 However, _Webpack's_ production config is correct and you can use this `npm build` script when you decide to build your custom website.
 
 # 🎮 Usage
 
-Delete example app to have a fresh start: 
+Delete example app to have a fresh start:
 
 ```bash
 npm run clear
