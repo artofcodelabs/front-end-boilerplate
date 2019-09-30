@@ -24,9 +24,6 @@ rm src/js/models/*
 rm -r src/js/reducers/page1
 rm -r src/js/stores/page1
 
-echo "import 'regenerator-runtime/runtime';" > src/index.js
-echo "import 'regenerator-runtime/runtime';" > src/page1.js
-
 cat dev/router.js \
   | awk -v regex="squaring" -v count="9" '$0 ~ regex { skip=count; next } --skip >= 0 { next } 1' \
   | tee dev/router.js
