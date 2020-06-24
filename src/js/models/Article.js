@@ -1,6 +1,6 @@
-import { Base } from "loco-js-model";
+import { Models } from "loco-js-model";
 
-class Article extends Base {
+class Article extends Models.Base {
   static identity = "Article";
 
   static resources = {
