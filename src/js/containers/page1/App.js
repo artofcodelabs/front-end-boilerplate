@@ -7,9 +7,6 @@ const mapStateToProps = state => ({
   showFooter: anyArticles(state)
 });
 
-const App = connect(
-  mapStateToProps,
-  null
-)(Root);
+const App = connect(mapStateToProps, null)(Root);
 
 export default App;

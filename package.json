@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack -p --config webpack.prod.js",
     "clear": "./bin/clear.sh",
+    "lint": "eslint src __tests__ ./*.js --fix",
     "lint-staged": "lint-staged",
     "start": "node dev/server.js",
     "test": "jest"
