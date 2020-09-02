@@ -6,9 +6,10 @@
   "scripts": {
     "build": "webpack -p --config webpack.prod.js",
     "clear": "./bin/clear.sh",
-    "lint": "eslint src __tests__ ./*.js --fix",
+    "eslint": "eslint src __tests__ ./*.js --fix",
     "lint-staged": "lint-staged",
     "start": "node dev/server.js",
+    "stylelint": "stylelint src/css --fix",
     "test": "jest"
   },
   "husky": {

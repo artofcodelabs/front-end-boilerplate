@@ -14,7 +14,7 @@
     "eslint",
     "git add"
   ],
-  "src/**/*.css": [
+  "src/css/**/*.css": [
     "prettier --write",
     "stylelint --fix",
     "git add"
