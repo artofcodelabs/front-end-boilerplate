@@ -4,7 +4,7 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const postCssOptions = require("./postcss.config.js");
+const postcssOptions = require("./postcss.config.js");
 
 module.exports = {
   resolve: {
@@ -33,7 +33,10 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          { loader: "postcss-loader", options: postCssOptions }
+          {
+            loader: "postcss-loader",
+            options: { postcssOptions: postcssOptions }
+          }
         ]
       },
       {

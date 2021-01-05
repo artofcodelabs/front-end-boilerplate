@@ -7,6 +7,7 @@ module.exports = {
     require("autoprefixer"),
     require("postcss-custom-properties"),
     require("postcss-flexbugs-fixes"),
-    require("postcss-nested")
+    require("postcss-nested"),
+    require("postcss-normalize")
   ]
 };
