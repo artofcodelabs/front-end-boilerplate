@@ -4,10 +4,8 @@ module.exports = {
   ident: "postcss",
   sourceMap: true,
   plugins: [
-    require("autoprefixer"),
-    require("postcss-custom-properties"),
-    require("postcss-flexbugs-fixes"),
     require("postcss-nested"),
-    require("postcss-normalize")
-  ]
+    require("postcss-import"),
+    require("autoprefixer"),
+  ],
 };

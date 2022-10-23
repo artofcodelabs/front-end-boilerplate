@@ -12,12 +12,12 @@ module.exports = {
       path.join(__dirname, "src", "js"),
       path.join(__dirname, "src", "css"),
       path.join(__dirname, "src", "images"),
-      "node_modules"
-    ]
+      "node_modules",
+    ],
   },
   entry: {
     index: "./src/index",
-    page1: "./src/page1"
+    page1: "./src/page1",
   },
   module: {
     rules: [
@@ -25,8 +25,8 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader"
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.css$/,
@@ -35,33 +35,25 @@ module.exports = {
           "css-loader",
           {
             loader: "postcss-loader",
-            options: { postcssOptions: postcssOptions }
-          }
-        ]
+            options: { postcssOptions: postcssOptions },
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 8192,
-              fallback: "file-loader"
-            }
-          }
-        ]
+        type: "asset",
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ["file-loader"]
-      }
-    ]
+        type: "asset",
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].css"
-    })
+      filename: "[name].css",
+    }),
   ],
   optimization: {
     splitChunks: {
@@ -70,18 +62,18 @@ module.exports = {
           chunks: "initial",
           name: "commons",
           minChunks: 2,
-          minSize: 5000 // The default is too small to create commons chunks
+          minSize: 5000, // The default is too small to create commons chunks
         },
         vendor: {
           test: /node_modules/,
           chunks: "all",
-          name: "vendor"
-        }
-      }
-    }
+          name: "vendor",
+        },
+      },
+    },
   },
   output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "public/assets")
-  }
+    path: path.resolve(__dirname, "public/assets"),
+    publicPath: "/assets/",
+  },
 };
