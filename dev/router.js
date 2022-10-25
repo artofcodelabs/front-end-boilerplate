@@ -3,38 +3,32 @@ const fs = require('fs');
 
 const rootPath = '..';
 
-class Router {
-  constructor(app){
-    this.app = app;
-  }
+const setRoutes = (app) => {
+  app.get('/', function(_, res) {
+    res.sendFile(path.join(__dirname, `${rootPath}/public/`));
+  });
 
-  setRoutes(){
-    this.app.get('/', function(req, res) {
-      res.sendFile(path.join(__dirname, `${rootPath}/public/`));
-    });
+  app.get(/^\/index(\.html)?/, function(_, res) {
+    res.sendFile(path.join(__dirname, `${rootPath}/public/index.html`));
+  });
 
-    this.app.get(/^\/index(\.html)?/, function(req, res) {
-      res.sendFile(path.join(__dirname, `${rootPath}/public/index.html`));
-    });
+  app.get(/^\/page1(\.html)?/, function(_, res) {
+    res.sendFile(path.join(__dirname, `${rootPath}/public/page1.html`));
+  });
 
-    this.app.get(/^\/page1(\.html)?/, function(req, res) {
-      res.sendFile(path.join(__dirname, `${rootPath}/public/page1.html`));
-    });
+  app.get(/^\/(squaring|cubing)/, function(_, res) {
+    res.sendFile(path.join(__dirname, `${rootPath}/public/index.html`));
+  });
 
-    this.app.get(/^\/(squaring|cubing)/, function(req, res) {
-      res.sendFile(path.join(__dirname, `${rootPath}/public/index.html`));
-    });
+  app.get(/^\/articles(\.json)?/, function(_, res) {
+    const filePath = path.join(__dirname, './server_responses/articles.json');
+    const body = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+    res.json(body);
+  });
 
-    this.app.get(/^\/articles(\.json)?/, function(req,res) {
-      const filePath = path.join(__dirname, './server_responses/articles.json');
-      const body = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-      res.json(body);
-    });
+  app.get(/^\/[a-z]+$/, function(_, res) {
+    res.sendFile(path.join(__dirname, `${rootPath}/public/index.html`));
+  });
+};
 
-    this.app.get(/^\/[a-z]+$/, function(req, res) {
-      res.sendFile(path.join(__dirname, `${rootPath}/public/index.html`));
-    });
-  }
-}
-
-module.exports = Router;
+module.exports = setRoutes;
