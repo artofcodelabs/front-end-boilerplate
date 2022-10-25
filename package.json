@@ -9,7 +9,7 @@
     "clear": "./bin/clear.sh",
     "eslint": "eslint src __tests__ ./*.js --fix",
     "lint-staged": "lint-staged",
-    "start": "node dev/server.js",
+    "start": "node dev/server.js --env=development",
     "stylelint": "stylelint src/css --fix",
     "test": "jest"
   },
