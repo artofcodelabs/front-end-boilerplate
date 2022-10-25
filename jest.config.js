@@ -1,5 +1,6 @@
 /* eslint-env node */
 
 module.exports = {
-  modulePaths: ["src/js"]
+  modulePaths: ["src/js"],
+  testEnvironment: "jsdom",
 };
