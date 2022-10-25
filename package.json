@@ -10,6 +10,7 @@
     "eslint": "eslint src __tests__ ./*.js --fix",
     "lint-staged": "lint-staged",
     "start": "node dev/server.js --env=development",
+    "serve": "node dev/server.js",
     "stylelint": "stylelint src/css --fix",
     "test": "jest"
   },

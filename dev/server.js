@@ -27,8 +27,8 @@ switch (opts.env) {
   }
 }
 
-app.use(express.static('public'));
 setRoutes(app);
+app.use(express.static('public'));
 
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!\n');
