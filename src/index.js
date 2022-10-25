@@ -18,7 +18,7 @@ const router = (
       <Route path="/index(.html)?" component={Root} />
       <Route
         path="/(squaring|cubing)(.html)?"
-        render={props => <Root {...props} />}
+        render={(props) => <Root {...props} />}
       />
       <Route component={NoMatch} />
     </Switch>
@@ -28,3 +28,7 @@ const router = (
 const RootComponent = isProd() ? <Root match={{ params: [] }} /> : router;
 
 ReactDOM.render(RootComponent, document.getElementById("root"));
+
+if (module.hot) {
+  module.hot.accept();
+}
