@@ -12,7 +12,8 @@
     "start": "node dev/server.js --env=development",
     "serve": "node dev/server.js",
     "stylelint": "stylelint src/css --fix",
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "author": "Zbigniew Humeniuk <hello@artofcode.co>",
   "license": "MIT",
