@@ -2,14 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { main } from "helpers/common";
 import Root from "components/index/Root";
 import NoMatch from "components/index/NoMatch";
 
 import "shared/index.css";
 import "index.css";
-
-main();
 
 const router = (
   <BrowserRouter>
