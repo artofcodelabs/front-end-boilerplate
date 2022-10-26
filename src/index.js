@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { main, isProd } from "helpers/common";
+import { main } from "helpers/common";
 import Root from "components/index/Root";
 import NoMatch from "components/index/NoMatch";
 
@@ -25,9 +25,7 @@ const router = (
   </BrowserRouter>
 );
 
-const RootComponent = isProd() ? <Root match={{ params: [] }} /> : router;
-
-ReactDOM.render(RootComponent, document.getElementById("root"));
+ReactDOM.render(router, document.getElementById("root"));
 
 if (module.hot) {
   module.hot.accept();
