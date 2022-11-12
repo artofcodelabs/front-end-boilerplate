@@ -8,10 +8,6 @@ const setRoutes = (app) => {
     res.sendFile(path.join(__dirname, `${rootPath}/public/`));
   });
 
-  app.get(/^\/index(\.html)?/, function(_, res) {
-    res.sendFile(path.join(__dirname, `${rootPath}/public/index.html`));
-  });
-
   app.get(/^\/page1(\.html)?/, function(_, res) {
     res.sendFile(path.join(__dirname, `${rootPath}/public/page1.html`));
   });
@@ -24,10 +20,6 @@ const setRoutes = (app) => {
     const filePath = path.join(__dirname, './server_responses/articles.json');
     const body = JSON.parse(fs.readFileSync(filePath, 'utf8'));
     res.json(body);
-  });
-
-  app.get(/^\/[a-z]+$/, function(_, res) {
-    res.sendFile(path.join(__dirname, `${rootPath}/public/index.html`));
   });
 };
 

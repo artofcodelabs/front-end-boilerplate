@@ -8,20 +8,31 @@ import {
   Route,
 } from "react-router-dom";
 
+import Cube from "components/index/Cube";
+import ErrorPage from "components/index/ErrorPage";
 import Root from "components/index/Root";
-//import NoMatch from "components/index/NoMatch";
+import Square from "components/index/Square";
 
 import "shared/index.css";
 import "index.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <>
-      <Route path="/" element={<Root />} />
-      <Route path="/index.html" element={<Root />} />
-      <Route path="/squaring.html" element={<Root />} />
-      <Route path="/cubing.html" element={<Root />} />
-    </>
+    <Route path="/" element={<Root />} errorElement={<ErrorPage />}>
+      <Route errorElement={<ErrorPage />}>
+        <Route
+          index
+          element={
+            <>
+              <Square />
+              <Cube />
+            </>
+          }
+        />
+        <Route path="squaring" element={<Square />} />
+        <Route path="cubing" element={<Cube />} />
+      </Route>
+    </Route>
   )
 );
 
