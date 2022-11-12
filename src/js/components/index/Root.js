@@ -1,18 +1,28 @@
 import React from "react";
-import ReactRouterPropTypes from "react-router-prop-types";
+import { useMatches } from "react-router-dom";
 
 import Nav from "components/shared/Nav";
 import Calcs from "./Calcs";
 
-const Root = ({ match }) => (
-  <div>
-    <Nav page="index" active={match.params[0]} />
-    <Calcs active={match.params[0] || "index"} />
-  </div>
-);
+const Root = () => {
+  const matches = useMatches();
 
-Root.propTypes = {
-  match: ReactRouterPropTypes.match.isRequired
+  let active = "index";
+  switch (matches[0].pathname) {
+    case "/squaring.html":
+      active = "squaring";
+      break;
+    case "/cubing.html":
+      active = "cubing";
+      break;
+  }
+
+  return (
+    <div>
+      <Nav page="index" active={active} />
+      <Calcs active={active} />
+    </div>
+  );
 };
 
 export default Root;
