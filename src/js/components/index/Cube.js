@@ -1,13 +1,14 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 import { cube } from "helpers/math";
 
 const Cube = () => {
-  const x = 3;
+  const number = useLoaderData();
 
   return (
     <p>
-      {x} cubed is {cube(x)}
+      {number} cubed is {cube(number)}
     </p>
   );
 };

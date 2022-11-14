@@ -1,7 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Form, NavLink } from "react-router-dom";
 
-const Nav = () => {
+const Nav = ({ number }) => {
   return (
     <nav>
       <ul>
@@ -17,6 +18,7 @@ const Nav = () => {
               placeholder="Number"
               type="number"
               name="number"
+              defaultValue={number}
             />
           </Form>
           <ul>
@@ -34,6 +36,10 @@ const Nav = () => {
       </ul>
     </nav>
   );
+};
+
+Nav.propTypes = {
+  number: PropTypes.number.isRequired,
 };
 
 export default Nav;

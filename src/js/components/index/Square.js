@@ -1,13 +1,14 @@
 import React from "react";
+import { useLoaderData } from "react-router-dom";
 
 import { square } from "helpers/math";
 
 const Square = () => {
-  const x = 9;
+  const number = useLoaderData();
 
   return (
     <p>
-      {x} squared is {square(x)}
+      {number} squared is {square(number)}
     </p>
   );
 };

@@ -1,12 +1,14 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { useLoaderData, Outlet } from "react-router-dom";
 
 import Nav from "components/shared/Nav";
 
 const Root = () => {
+  const number = useLoaderData();
+
   return (
     <div>
-      <Nav />
+      <Nav number={number} />
       <Outlet />
     </div>
   );
