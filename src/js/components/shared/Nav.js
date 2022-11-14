@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Form, NavLink } from "react-router-dom";
+import { useSubmit, Form, NavLink } from "react-router-dom";
 
 const Nav = ({ number }) => {
+  const submit = useSubmit();
+
   return (
     <nav>
       <ul>
@@ -19,6 +21,12 @@ const Nav = ({ number }) => {
               type="number"
               name="number"
               defaultValue={number}
+              onChange={(event) => {
+                const isFirstSearch = number == null;
+                submit(event.currentTarget.form, {
+                  replace: !isFirstSearch,
+                });
+              }}
             />
           </Form>
           <ul>
