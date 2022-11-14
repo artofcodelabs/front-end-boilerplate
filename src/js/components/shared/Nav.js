@@ -7,7 +7,7 @@ const Nav = ({ number }) => {
     <nav>
       <ul>
         <li>
-          <NavLink to={"/"}>Index</NavLink>
+          <NavLink to={`/?number=${number}`}>Index</NavLink>
           <Form
             id="number-form"
             style={{ display: "inline", marginLeft: "10px" }}
@@ -23,10 +23,10 @@ const Nav = ({ number }) => {
           </Form>
           <ul>
             <li>
-              <NavLink to={"squaring"}>Squaring</NavLink>
+              <NavLink to={`squaring?number=${number}`}>Squaring</NavLink>
             </li>
             <li>
-              <NavLink to={"cubing"}>Cubing</NavLink>
+              <NavLink to={`cubing?number=${number}`}>Cubing</NavLink>
             </li>
           </ul>
         </li>
