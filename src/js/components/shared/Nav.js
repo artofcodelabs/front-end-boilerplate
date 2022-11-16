@@ -1,15 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useSubmit, Form, NavLink } from "react-router-dom";
+import { useLocation, useSubmit, Form, NavLink } from "react-router-dom";
 
 const Nav = ({ number }) => {
   const submit = useSubmit();
+  const location = useLocation();
 
   return (
     <nav>
       <ul>
         <li>
-          <NavLink to={`/?number=${number}`}>Index</NavLink>
+          <NavLink to={`/?number=${number}`}>Math operations</NavLink>
           <Form
             id="number-form"
             style={{ display: "inline", marginLeft: "10px" }}
@@ -24,6 +25,7 @@ const Nav = ({ number }) => {
               onChange={(event) => {
                 const isFirstSearch = number == null;
                 submit(event.currentTarget.form, {
+                  action: `${location.pathname}?${location.search}`,
                   replace: !isFirstSearch,
                 });
               }}
