@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData, Outlet } from "react-router-dom";
 
-import Nav from "components/shared/Nav";
+import Nav from "./Nav";
 
 const Root = () => {
   const number = useLoaderData();

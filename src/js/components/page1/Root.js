@@ -1,14 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Nav from "components/shared/Nav";
 import VisibleArticleList from "containers/page1/VisibleArticleList";
 import Assets from "./Assets";
 import Footer from "./Footer";
 
 const Root = ({ showFooter }) => (
   <div>
-    <Nav page="page1" />
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Math operations</a>
+        </li>
+        <li>
+          <a href="#" className="active">
+            Page 1
+          </a>
+        </li>
+      </ul>
+    </nav>
     <Assets />
     <VisibleArticleList />
     {showFooter ? <Footer /> : ""}
@@ -16,7 +26,7 @@ const Root = ({ showFooter }) => (
 );
 
 Root.propTypes = {
-  showFooter: PropTypes.bool.isRequired
+  showFooter: PropTypes.bool.isRequired,
 };
 
 export default Root;

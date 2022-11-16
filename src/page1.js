@@ -1,6 +1,6 @@
 import "core-js/stable";
 import React from "react";
-import { render } from "react-dom";
+import { createRoot } from "react-dom/client";
 import { Provider } from "react-redux";
 
 import "config";
@@ -10,11 +10,12 @@ import App from "containers/page1/App";
 import "shared/index.css";
 import "page1.css";
 
-render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById("root")
+  </Provider>
 );
 
 if (module.hot) {
