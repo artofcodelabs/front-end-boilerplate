@@ -1,21 +1,19 @@
 import Article from "models/Article";
+import store from "stores/page1/store";
 
-export const loadArticles = () => async dispatch => {
+const loadArticles = async () => {
   try {
     const resp = await Article.all({ resource: "main" });
-    dispatch({
+    store.dispatch({
       type: "ADD_ARTICLES",
-      articles: resp.resources
+      articles: resp.resources,
     });
   } catch (err) {
-    dispatch({
+    store.dispatch({
       type: "FETCH_ARTICLES_FAILURE",
-      msg: "Something went wrong"
+      msg: "Something went wrong",
     });
   }
 };
 
-export const markAsRead = id => ({
-  type: "MARK_AS_READ",
-  id
-});
+export { loadArticles };

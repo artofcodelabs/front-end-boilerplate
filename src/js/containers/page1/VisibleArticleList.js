@@ -1,18 +1,30 @@
 import { connect } from "react-redux";
 
 import { getVisibleArticles, anyArticles, getErrorMsg } from "reducers/page1";
-import { loadArticles, markAsRead } from "actions/page1/articles";
+import { loadArticles } from "actions/page1/articles";
 import ArticleList from "components/page1/ArticleList";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   articles: getVisibleArticles(state),
   showLink: !anyArticles(state),
-  errorMsg: getErrorMsg(state)
+  errorMsg: getErrorMsg(state),
 });
 
-const VisibleArticleList = connect(mapStateToProps, {
-  onLoadArticlesClick: loadArticles,
-  onMarkAsReadClick: markAsRead
-})(ArticleList);
+const mapDispatchToProps = (dispatch) => ({
+  async onLoadArticlesClick() {
+    loadArticles();
+  },
+  onMarkAsReadClick(id) {
+    dispatch({
+      type: "MARK_AS_READ",
+      id,
+    });
+  },
+});
+
+const VisibleArticleList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ArticleList);
 
 export default VisibleArticleList;
