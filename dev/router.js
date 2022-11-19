@@ -8,12 +8,12 @@ const setRoutes = (app) => {
     res.sendFile(path.join(__dirname, `${rootPath}/public/`));
   });
 
-  app.get(/^\/page1(\.html)?/, function(_, res) {
-    res.sendFile(path.join(__dirname, `${rootPath}/public/page1.html`));
-  });
-
   app.get(/^\/(squaring|cubing)/, function(_, res) {
     res.sendFile(path.join(__dirname, `${rootPath}/public/index.html`));
+  });
+
+  app.get(/^\/page1/, function(_, res) {
+    res.sendFile(path.join(__dirname, `${rootPath}/public/page1.html`));
   });
 
   app.get(/^\/articles(\.json)?/, function(_, res) {

@@ -9,12 +9,10 @@ const Nav = () => {
           <a href="/">Math operations</a>
         </li>
         <li>
-          <a href="#" className="active">
-            Page 1
-          </a>
+          <NavLink to={`/page1`}>Page1</NavLink>
           <ul>
             <li>
-              <NavLink to={`/page1.html/assets`}>Assets</NavLink>
+              <NavLink to={`/page1/assets`}>Assets</NavLink>
             </li>
           </ul>
         </li>

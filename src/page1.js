@@ -12,12 +12,22 @@ import {
 import "config";
 import store from "stores/page1/store";
 import App from "containers/page1/App";
+import VisibleArticleList from "containers/page1/VisibleArticleList";
+import Assets from "components/page1/Assets";
+import ErrorPage from "components/index/ErrorPage";
 
 import "shared/index.css";
 import "page1.css";
 
 const router = createBrowserRouter(
-  createRoutesFromElements(<Route path="page1.html" element={<App />}></Route>)
+  createRoutesFromElements(
+    <Route path="page1" element={<App />} errorElement={<ErrorPage />}>
+      <Route errorElement={<ErrorPage />}>
+        <Route index element={<VisibleArticleList />} />
+        <Route path="assets" element={<Assets />} />
+      </Route>
+    </Route>
+  )
 );
 
 const container = document.getElementById("root");
