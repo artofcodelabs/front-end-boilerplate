@@ -14,7 +14,7 @@ import store from "stores/page1/store";
 import App from "containers/page1/App";
 import VisibleArticleList from "containers/page1/VisibleArticleList";
 import Assets from "components/page1/Assets";
-import ErrorPage from "components/index/ErrorPage";
+import ErrorPage from "components/shared/ErrorPage";
 
 import "shared/index.css";
 import "page1.css";

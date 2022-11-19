@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 import Cube from "components/index/Cube";
-import ErrorPage from "components/index/ErrorPage";
+import ErrorPage from "components/shared/ErrorPage";
 import Root from "components/index/Root";
 import Square from "components/index/Square";
 import { rootLoader } from "routes/loaders";
