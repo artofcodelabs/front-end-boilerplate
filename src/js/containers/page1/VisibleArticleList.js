@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 
 import { getVisibleArticles, anyArticles, getErrorMsg } from "reducers/page1";
-import { loadArticles } from "actions/page1/articles";
 import ArticleList from "components/page1/ArticleList";
 
 const mapStateToProps = (state) => ({
@@ -11,9 +10,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  async onLoadArticlesClick() {
-    loadArticles();
-  },
   onMarkAsReadClick(id) {
     dispatch({
       type: "MARK_AS_READ",
