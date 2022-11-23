@@ -1,9 +1,11 @@
 import Article from "models/Article";
 import store from "stores/page1/store";
-import setVisibilityFilter from "actions/page1/visibilityFilter";
 
 const show = (filter = "SHOW_ALL") => {
-  store.dispatch(setVisibilityFilter(filter));
+  store.dispatch({
+    type: "SET_VISIBILITY_FILTER",
+    filter,
+  });
 };
 
 const loadArticles = async () => {

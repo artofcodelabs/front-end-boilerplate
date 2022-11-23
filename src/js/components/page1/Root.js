@@ -5,16 +5,16 @@ import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Nav from "./Nav";
 
-const Root = ({ showFooter }) => (
+const Root = ({ anyArticles }) => (
   <div>
-    <Nav />
+    <Nav anyArticles={anyArticles} />
     <Outlet />
-    {showFooter ? <Footer /> : ""}
+    {anyArticles ? <Footer /> : ""}
   </div>
 );
 
 Root.propTypes = {
-  showFooter: PropTypes.bool.isRequired,
+  anyArticles: PropTypes.bool.isRequired,
 };
 
 export default Root;
