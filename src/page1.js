@@ -16,7 +16,7 @@ import VisibleArticleList from "containers/page1/VisibleArticleList";
 import Assets from "components/page1/Assets";
 import ErrorPage from "components/shared/ErrorPage";
 
-import { loadArticles } from "actions/page1/articles";
+import { showAll, showRead, showUnread } from "actions/page1/articles";
 
 import "shared/index.css";
 import "page1.css";
@@ -27,10 +27,12 @@ const router = createBrowserRouter(
       <Route errorElement={<ErrorPage />}>
         <Route index element={<VisibleArticleList />} />
         <Route path="assets" element={<Assets />} />
+        <Route path="all" element={<VisibleArticleList />} loader={showAll} />
+        <Route path="read" element={<VisibleArticleList />} loader={showRead} />
         <Route
-          path="all"
+          path="unread"
           element={<VisibleArticleList />}
-          loader={loadArticles}
+          loader={showUnread}
         />
       </Route>
     </Route>

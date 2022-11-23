@@ -12,7 +12,7 @@ const ArticleList = ({ articles, showLink, onMarkAsReadClick, errorMsg }) => (
 
     {errorMsg && !articles.length ? <FetchError msg={errorMsg} /> : ""}
 
-    {showLink ? <NavLink to={"all"}>Load Articles</NavLink> : ""}
+    {showLink ? <NavLink to={"/page1/all"}>Load Articles</NavLink> : ""}
 
     {articles.map((article) => (
       <Article

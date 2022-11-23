@@ -1,16 +1,16 @@
 import React from "react";
-import FilterLink from "containers/page1/FilterLink";
+import { NavLink } from "react-router-dom";
 
 const Footer = () => (
   <div>
     <hr />
 
     <p>
-      Show: <FilterLink filter="SHOW_ALL">All</FilterLink>
+      Show: <NavLink to={"/page1/all"}>All</NavLink>
       {", "}
-      <FilterLink filter="SHOW_READ">Read</FilterLink>
+      <NavLink to={"/page1/read"}>Read</NavLink>
       {", "}
-      <FilterLink filter="SHOW_UNREAD">Unread</FilterLink>
+      <NavLink to={"/page1/unread"}>Unread</NavLink>
     </p>
   </div>
 );
