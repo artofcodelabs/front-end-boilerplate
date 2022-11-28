@@ -7,7 +7,7 @@ const resources = (state = [], action) => {
     case "ADD_ARTICLES":
       return [...state, ...action.articles];
     case "MARK_AS_READ":
-      return state.map(article =>
+      return state.map((article) =>
         article.id === action.id
           ? new Article({ ...article, read: true })
           : article
@@ -28,23 +28,11 @@ const errorMsg = (state = null, action) => {
 
 const articles = combineReducers({
   resources,
-  errorMsg
+  errorMsg,
 });
 
 export default articles;
 
-export const getVisibleArticles = (state, filter) => {
-  switch (filter) {
-    case "SHOW_READ":
-      return state.resources.filter(a => a.read);
-    case "SHOW_UNREAD":
-      return state.resources.filter(a => !a.read);
-    case "SHOW_ALL":
-    default:
-      return state.resources;
-  }
-};
+export const anyArticles = (state) => state.resources.length > 0;
 
-export const anyArticles = state => state.resources.length > 0;
-
-export const getErrorMsg = state => state.errorMsg;
+export const getErrorMsg = (state) => state.errorMsg;
