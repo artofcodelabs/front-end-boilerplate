@@ -1,21 +1,22 @@
 import { combineReducers } from "redux";
+import produce from "immer";
 
 import Article from "models/Article";
 
-const resources = (state = [], action) => {
+const resources = produce((draft = [], action) => {
   switch (action.type) {
     case "ADD_ARTICLES":
-      return [...state, ...action.articles];
-    case "MARK_AS_READ":
-      return state.map((article) =>
-        article.id === action.id
-          ? new Article({ ...article, read: true })
-          : article
-      );
+      return draft.concat(action.articles);
+    case "MARK_AS_READ": {
+      const current = draft.find((a) => a.id === action.id);
+      const newArticle = new Article({ ...current, read: true });
+      draft[draft.indexOf(current)] = newArticle;
+      break;
+    }
     default:
-      return state;
+      return draft;
   }
-};
+});
 
 const errorMsg = (state = null, action) => {
   switch (action.type) {
@@ -32,7 +33,3 @@ const articles = combineReducers({
 });
 
 export default articles;
-
-export const anyArticles = (state) => state.resources.length > 0;
-
-export const getErrorMsg = (state) => state.errorMsg;

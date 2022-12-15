@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { anyArticles } from "reducers/page1";
+import { anyArticles } from "selectors/articles";
 import Root from "components/page1/Root";
 
 const mapStateToProps = (state) => ({

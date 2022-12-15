@@ -1,7 +1,10 @@
 import { connect } from "react-redux";
 
-import { anyArticles, getErrorMsg } from "reducers/page1";
-import { getVisibleArticles } from "selectors/articles";
+import {
+  anyArticles,
+  getErrorMsg,
+  getVisibleArticles,
+} from "selectors/articles";
 import ArticleList from "components/page1/ArticleList";
 
 const mapStateToProps = (state) => ({

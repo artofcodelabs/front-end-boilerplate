@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import articles, * as fromArticles from "./articles";
+import articles from "./articles";
 import visibilityFilter from "./visibilityFilter";
 
 const rootReducer = combineReducers({
@@ -9,7 +9,3 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
-
-export const anyArticles = (state) => fromArticles.anyArticles(state.articles);
-
-export const getErrorMsg = (state) => fromArticles.getErrorMsg(state.articles);

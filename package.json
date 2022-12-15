@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "core-js": "^3.26.0",
+    "immer": "^9.0.16",
     "loco-js-model": "^2.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",

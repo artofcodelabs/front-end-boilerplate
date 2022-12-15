@@ -12,3 +12,7 @@ export const getVisibleArticles = (state) => {
       return articles;
   }
 };
+
+export const anyArticles = (state) => state.articles.resources.length > 0;
+
+export const getErrorMsg = (state) => state.articles.errorMsg;
