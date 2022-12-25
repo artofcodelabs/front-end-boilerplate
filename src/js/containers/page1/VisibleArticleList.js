@@ -16,8 +16,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onMarkAsReadClick(id) {
     dispatch({
-      type: "MARK_AS_READ",
+      type: "ARTICLES.UPDATE",
       id,
+      changes: { read: [false, true] },
     });
   },
 });

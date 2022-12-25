@@ -5,11 +5,14 @@ import Article from "models/Article";
 
 const resources = produce((draft = [], action) => {
   switch (action.type) {
-    case "ADD_ARTICLES":
+    case "ARTICLES.ADD":
       return draft.concat(action.articles);
-    case "MARK_AS_READ": {
+    case "ARTICLES.UPDATE": {
       const current = draft.find((a) => a.id === action.id);
-      const newArticle = new Article({ ...current, read: true });
+      const newArticle = new Article({ ...current });
+      for (const attr of Object.keys(action.changes)) {
+        newArticle[attr] = action.changes[attr][1];
+      }
       draft[draft.indexOf(current)] = newArticle;
       break;
     }

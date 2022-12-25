@@ -14,7 +14,7 @@ const loadArticles = async () => {
   try {
     const resp = await Article.all({ resource: "main" });
     store.dispatch({
-      type: "ADD_ARTICLES",
+      type: "ARTICLES.ADD",
       articles: resp.resources,
     });
   } catch (err) {
