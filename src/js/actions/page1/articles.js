@@ -1,5 +1,5 @@
-import Article from "models/Article";
 import store from "stores/page1/store";
+import Article from "models/Article";
 
 const show = (filter = "SHOW_ALL") => {
   store.dispatch({
