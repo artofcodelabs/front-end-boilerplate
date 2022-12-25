@@ -6,7 +6,7 @@ import Article from "models/Article";
 
 const errorMsg = (state = null, action) => {
   switch (action.type) {
-    case "FETCH_ARTICLES_FAILURE":
+    case "ARTICLES.FETCH_FAILURE":
       return action.msg;
     default:
       return state;

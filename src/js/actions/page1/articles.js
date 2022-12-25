@@ -19,7 +19,7 @@ const loadArticles = async () => {
     });
   } catch (err) {
     store.dispatch({
-      type: "FETCH_ARTICLES_FAILURE",
+      type: "ARTICLES.FETCH_FAILURE",
       msg: "Something went wrong",
     });
   }
