@@ -14,7 +14,6 @@ module.exports = {
     ],
   },
   entry: {
-    index: "./src/index",
     page1: "./src/page1",
   },
   module: {
