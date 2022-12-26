@@ -12,7 +12,7 @@ import Cube from "components/index/Cube";
 import ErrorPage from "components/shared/ErrorPage";
 import Root from "components/index/Root";
 import Square from "components/index/Square";
-import { rootLoader } from "routes/loaders";
+import { rootLoader } from "router/loaders";
 
 import "shared/index.css";
 import "index.css";
