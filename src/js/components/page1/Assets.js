@@ -1,6 +1,6 @@
 import React from "react";
 
-import { square } from "helpers/math";
+import { square } from "services/math";
 import Logo from "logo.png";
 
 const Assets = () => (

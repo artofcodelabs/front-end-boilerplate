@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 
-import { square } from "helpers/math";
+import { square } from "services/math";
 
 const Square = () => {
   const number = useLoaderData();

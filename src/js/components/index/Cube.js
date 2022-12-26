@@ -1,7 +1,7 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 
-import { cube } from "helpers/math";
+import { cube } from "services/math";
 
 const Cube = () => {
   const number = useLoaderData();
