@@ -1,4 +1,3 @@
-const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 
 const common = require("./webpack.common.js");
@@ -7,8 +6,7 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   entry: {
-    index: ["./src/index", "webpack-hot-middleware/client"],
-    page1: ["./src/page1", "webpack-hot-middleware/client"],
+    index: "./src/index",
+    page1: "./src/page1",
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
 });

@@ -14,7 +14,7 @@ const app = express();
 
 switch (opts.env) {
   case 'development': {
-    const config = require('../webpack.dev.js');
+    const config = require('../webpack.hmr.js');
     const compiler = require('webpack')(config);
 
     app.use(require('webpack-dev-middleware')(compiler, {
