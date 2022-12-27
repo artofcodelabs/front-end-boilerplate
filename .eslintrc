@@ -8,6 +8,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:testcafe/recommended",
     "prettier"
   ],
 
@@ -22,7 +23,8 @@
   "plugins": [
     "prettier",
     "react",
-    "jest"
+    "jest",
+    "testcafe"
   ],
 
   "rules": {
