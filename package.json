@@ -12,7 +12,8 @@
     "start": "node dev/server.js --env=development",
     "serve": "node dev/server.js",
     "stylelint": "stylelint src/css --fix",
-    "test": "jest",
+    "test": "npm run test-unit && npm run test-e2e",
+    "test-unit": "jest",
     "pretest-e2e": "npm run build",
     "test-e2e": "testcafe firefox __tests__/js/e2e/*.js --app 'node dev/server.js --env=test'",
     "prepare": "husky install"
