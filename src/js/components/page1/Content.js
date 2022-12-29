@@ -7,9 +7,6 @@ const Content = ({ anyArticles }) => {
     <nav>
       <ul>
         <li>
-          <a href="/">Math operations</a>
-        </li>
-        <li>
           <NavLink to={`/page1${anyArticles ? "/all" : ""}`}>Page1</NavLink>
           <ul>
             <li>
