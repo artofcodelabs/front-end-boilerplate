@@ -3,14 +3,15 @@ import PropTypes from "prop-types";
 import { Outlet } from "react-router-dom";
 
 import Footer from "./Footer";
-import Nav from "./Nav";
+import Content from "./Content";
+import Layout from "../shared/Layout";
 
 const Root = ({ anyArticles }) => (
-  <div>
-    <Nav anyArticles={anyArticles} />
+  <Layout current="page1">
+    <Content anyArticles={anyArticles} />
     <Outlet />
     {anyArticles ? <Footer /> : ""}
-  </div>
+  </Layout>
 );
 
 Root.propTypes = {

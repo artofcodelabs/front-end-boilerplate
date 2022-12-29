@@ -1,8 +1,1 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import "./index/li.css";
-
-body {
-  background-color: #eee;
-}
+@import "./shared/tailwind.css";

@@ -36,7 +36,7 @@ const Content = ({ number }) => {
           </div>
         </div>
       </Form>
-      <NavLink to={`/?number=${number}`}>Math operations</NavLink>
+      <NavLink to={`/?number=${number}`}>All operations</NavLink>
       <NavLink to={`squaring?number=${number}`}>Squaring</NavLink>
       <NavLink to={`cubing?number=${number}`}>Cubing</NavLink>
     </>

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
-const Nav = ({ anyArticles }) => {
+const Content = ({ anyArticles }) => {
   return (
     <nav>
       <ul>
@@ -22,8 +22,8 @@ const Nav = ({ anyArticles }) => {
   );
 };
 
-Nav.propTypes = {
+Content.propTypes = {
   anyArticles: PropTypes.bool.isRequired,
 };
 
-export default Nav;
+export default Content;

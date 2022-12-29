@@ -3,16 +3,16 @@ import PropTypes from "prop-types";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-const navigation = [
-  { name: "Math Operations", href: "#", current: true },
-  { name: "Page 1", href: "page1", current: false },
-];
-
 const classNames = (...classes) => {
   return classes.filter(Boolean).join(" ");
 };
 
-const Layout = ({ children }) => {
+const Layout = ({ current, children }) => {
+  const navigation = [
+    { name: "Math Operations", href: "#", current: current === "math" },
+    { name: "Page 1", href: "page1", current: current === "page1" },
+  ];
+
   return (
     <>
       <div className="min-h-full">
@@ -111,6 +111,7 @@ const Layout = ({ children }) => {
 };
 
 Layout.propTypes = {
+  current: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
 
