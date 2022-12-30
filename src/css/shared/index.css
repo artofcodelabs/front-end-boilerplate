@@ -1,9 +1,5 @@
 @import "./fonts.css";
 
-body {
-  font-family: "Roboto", sans-serif;
-}
-
 a.active {
   font-weight: bold;
   text-decoration: none;
