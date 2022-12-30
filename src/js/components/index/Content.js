@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { useLocation, useSubmit, Form, NavLink } from "react-router-dom";
+import { useLocation, useSubmit, Form } from "react-router-dom";
+import CustomNavLink from "../shared/NavLink";
 
 const Content = ({ number }) => {
   const submit = useSubmit();
@@ -36,9 +37,9 @@ const Content = ({ number }) => {
           </div>
         </div>
       </Form>
-      <NavLink to={`/?number=${number}`}>All operations</NavLink>
-      <NavLink to={`squaring?number=${number}`}>Squaring</NavLink>
-      <NavLink to={`cubing?number=${number}`}>Cubing</NavLink>
+      <CustomNavLink to={`/?number=${number}`}>All operations</CustomNavLink>
+      <CustomNavLink to={`squaring?number=${number}`}>Squaring</CustomNavLink>
+      <CustomNavLink to={`cubing?number=${number}`}>Cubing</CustomNavLink>
     </>
   );
 };

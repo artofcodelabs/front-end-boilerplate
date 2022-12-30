@@ -35,7 +35,7 @@ const Layout = ({ current, children }) => {
                     <div className="ml-10 flex items-baseline space-x-4">
                       {navigation.map((item) => (
                         <a
-                          key={item.name}
+                          key={item.id}
                           href={item.href}
                           className={classNames(
                             item.current
