@@ -10,14 +10,14 @@ const Content = ({ number }) => {
   return (
     <>
       <Form id="number-form" style={{ display: "inline", marginLeft: "10px" }}>
-        <div>
+        <div className="mb-2">
           <label
             htmlFor="number"
             className="block text-sm font-medium text-gray-700"
           >
             Number
           </label>
-          <div className="relative mt-1 rounded-md shadow-sm">
+          <div className="relative mt-1 rounded-md shadow-sm w-full sm:w-1/2">
             <input
               id="number"
               aria-label="Specify number for calculations"
