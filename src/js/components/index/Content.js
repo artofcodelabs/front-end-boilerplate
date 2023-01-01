@@ -8,7 +8,7 @@ const Content = ({ number }) => {
   const location = useLocation();
 
   return (
-    <>
+    <div className="mb-2">
       <Form id="number-form" style={{ display: "inline", marginLeft: "10px" }}>
         <div className="mb-2">
           <label
@@ -40,7 +40,7 @@ const Content = ({ number }) => {
       <CustomNavLink to={`/?number=${number}`}>All operations</CustomNavLink>
       <CustomNavLink to={`squaring?number=${number}`}>Squaring</CustomNavLink>
       <CustomNavLink to={`cubing?number=${number}`}>Cubing</CustomNavLink>
-    </>
+    </div>
   );
 };
 
