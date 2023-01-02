@@ -7,7 +7,7 @@ import Article from "./Article";
 
 const ArticleList = ({ articles, showLink, onMarkAsReadClick, errorMsg }) => (
   <div>
-    <h2>Articles</h2>
+    {showLink ? "" : <h2>Articles</h2>}
 
     {errorMsg && !articles.length ? (
       <p style={{ color: "red" }}>{errorMsg}</p>
