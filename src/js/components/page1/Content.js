@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import NavLink from "components/shared/NavLink";
 
 const Content = ({ anyArticles }) => {

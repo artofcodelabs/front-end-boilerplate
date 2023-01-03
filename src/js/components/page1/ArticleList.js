@@ -4,9 +4,12 @@ import { NavLink } from "react-router-dom";
 
 import ArticleModel from "models/Article";
 import Article from "./Article";
+import Filter from "./Filter";
 
 const ArticleList = ({ articles, showLink, onMarkAsReadClick, errorMsg }) => (
   <div>
+    {!showLink ? <Filter /> : ""}
+
     {errorMsg && !articles.length ? (
       <p style={{ color: "red" }}>{errorMsg}</p>
     ) : (
