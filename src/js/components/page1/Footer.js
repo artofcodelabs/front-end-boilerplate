@@ -6,11 +6,18 @@ const Footer = () => (
     <hr />
 
     <p>
-      Show: <NavLink to={"/page1/all"}>All</NavLink>
+      Show:{" "}
+      <NavLink to={"/page1/all"} className="link">
+        All
+      </NavLink>
       {", "}
-      <NavLink to={"/page1/read"}>Read</NavLink>
+      <NavLink to={"/page1/read"} className="link">
+        Read
+      </NavLink>
       {", "}
-      <NavLink to={"/page1/unread"}>Unread</NavLink>
+      <NavLink to={"/page1/unread"} className="link">
+        Unread
+      </NavLink>
     </p>
   </div>
 );

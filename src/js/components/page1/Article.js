@@ -10,18 +10,16 @@ const Article = ({
   publishedAt,
   content,
   read,
-  onMarkAsReadClick
+  onMarkAsReadClick,
 }) => (
-  <article id={`article_${id}`}>
-    <h3>{title}</h3>
+  <article id={`article_${id}`} className="mb-2">
+    <h3 className="text-lg font-medium leading-6 text-gray-900">{title}</h3>
 
-    <p>
-      <i>
-        {author} wrote this on {publishedAt.toLocaleDateString("pl")}
-      </i>
+    <p className="mb-1 text-sm text-gray-500">
+      {author} wrote this on {publishedAt.toLocaleDateString("pl")}
     </p>
 
-    <p>{content}</p>
+    <p className="text-gray-900">{content}</p>
 
     {!read ? (
       <p>
@@ -42,7 +40,7 @@ Article.propTypes = {
   publishedAt: PropTypes.instanceOf(Date).isRequired,
   content: PropTypes.string.isRequired,
   read: PropTypes.bool.isRequired,
-  onMarkAsReadClick: PropTypes.func.isRequired
+  onMarkAsReadClick: PropTypes.func.isRequired,
 };
 
 export default Article;

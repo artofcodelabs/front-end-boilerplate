@@ -1,11 +1,13 @@
 @import "./shared/tailwind.css";
 
-:root {
-  --border-radius: 10px;
+@layer components {
+  a.link {
+    @apply text-indigo-600 hover:text-indigo-700 hover:underline;
+  }
 }
 
-body {
-  background: radial-gradient(#eee, #f0f0f0, #fcfcfc);
+:root {
+  --border-radius: 10px;
 }
 
 p {

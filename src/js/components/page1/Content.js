@@ -5,7 +5,7 @@ import NavLink from "components/shared/NavLink";
 const Content = ({ anyArticles }) => {
   return (
     <p className="mb-2">
-      <NavLink to={`/page1${anyArticles ? "/all" : ""}`}>Page1</NavLink>
+      <NavLink to={`/page1${anyArticles ? "/all" : ""}`}>Articles</NavLink>
       <NavLink to={"/page1/assets"}>Assets</NavLink>
     </p>
   );
