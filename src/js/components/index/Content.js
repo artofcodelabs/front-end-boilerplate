@@ -9,7 +9,7 @@ const Content = ({ number }) => {
 
   return (
     <div className="mb-2">
-      <Form id="number-form" style={{ display: "inline", marginLeft: "10px" }}>
+      <Form id="number-form">
         <div className="mb-2">
           <label
             htmlFor="number"
