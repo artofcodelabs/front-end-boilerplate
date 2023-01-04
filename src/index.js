@@ -15,7 +15,6 @@ import Square from "components/index/Square";
 import { rootLoader } from "router/loaders";
 
 import "shared/index.css";
-import "index.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

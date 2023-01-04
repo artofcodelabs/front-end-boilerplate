@@ -1,11 +1,3 @@
-@import "./shared/tailwind.css";
-
-@layer components {
-  a.link {
-    @apply text-indigo-600 hover:text-indigo-700 hover:underline;
-  }
-}
-
 :root {
   --border-radius: 10px;
 }
