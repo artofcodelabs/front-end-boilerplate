@@ -9,7 +9,7 @@ const classNames = (...classes) => {
 
 const navigation = [
   { id: "math", name: "Math Operations", href: "/", current: false },
-  { id: "page1", name: "Page 1", href: "/page1", current: false },
+  { id: "page1", name: "Page 1", href: "/page1/articles", current: false },
 ];
 
 const Layout = ({ current, children }) => {

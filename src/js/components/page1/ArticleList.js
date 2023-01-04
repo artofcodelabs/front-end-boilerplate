@@ -17,7 +17,7 @@ const ArticleList = ({ articles, showLink, onMarkAsReadClick, errorMsg }) => (
     )}
 
     {showLink ? (
-      <NavLink to={"/page1/all"} className="link">
+      <NavLink to={"/page1/articles/all"} className="link">
         Load Articles
       </NavLink>
     ) : (

@@ -25,12 +25,20 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="page1" element={<App />} errorElement={<ErrorPage />}>
       <Route errorElement={<ErrorPage />}>
-        <Route index element={<VisibleArticleList />} />
+        <Route path="articles" element={<VisibleArticleList />} />
         <Route path="assets" element={<Assets />} />
-        <Route path="all" element={<VisibleArticleList />} loader={showAll} />
-        <Route path="read" element={<VisibleArticleList />} loader={showRead} />
         <Route
-          path="unread"
+          path="articles/all"
+          element={<VisibleArticleList />}
+          loader={showAll}
+        />
+        <Route
+          path="articles/read"
+          element={<VisibleArticleList />}
+          loader={showRead}
+        />
+        <Route
+          path="articles/unread"
           element={<VisibleArticleList />}
           loader={showUnread}
         />
