@@ -12,9 +12,14 @@ import Cube from "components/index/Cube";
 import ErrorPage from "components/shared/ErrorPage";
 import Root from "components/index/Root";
 import Square from "components/index/Square";
-import { rootLoader } from "router/loaders";
 
 import "shared/index.css";
+
+const fetchNumber = ({ request }) => {
+  const url = new URL(request.url);
+  const number = url.searchParams.get("number");
+  return Number(number) || 4;
+};
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,7 +27,7 @@ const router = createBrowserRouter(
       path="/"
       element={<Root />}
       errorElement={<ErrorPage />}
-      loader={rootLoader}
+      loader={fetchNumber}
     >
       <Route errorElement={<ErrorPage />}>
         <Route
@@ -33,10 +38,10 @@ const router = createBrowserRouter(
               <Cube />
             </>
           }
-          loader={rootLoader}
+          loader={fetchNumber}
         />
-        <Route path="squaring" element={<Square />} loader={rootLoader} />
-        <Route path="cubing" element={<Cube />} loader={rootLoader} />
+        <Route path="squaring" element={<Square />} loader={fetchNumber} />
+        <Route path="cubing" element={<Cube />} loader={fetchNumber} />
       </Route>
     </Route>
   )
