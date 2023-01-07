@@ -27,10 +27,9 @@ const Content = ({ number }) => {
               name="number"
               defaultValue={number}
               onChange={(event) => {
-                const isFirstSearch = number == null;
                 submit(event.currentTarget.form, {
                   action: `${location.pathname}?${location.search}`,
-                  replace: !isFirstSearch,
+                  replace: true,
                 });
               }}
               className="block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
