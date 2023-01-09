@@ -5,7 +5,7 @@ import {
   getErrorMsg,
   getVisibleArticles,
 } from "selectors/articles";
-import ArticleList from "components/page1/ArticleList";
+import ArticleListComponent from "components/page1/ArticleList";
 
 const mapStateToProps = (state) => ({
   articles: getVisibleArticles(state),
@@ -23,9 +23,9 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-const VisibleArticleList = connect(
+const ArticleList = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ArticleList);
+)(ArticleListComponent);
 
-export default VisibleArticleList;
+export default ArticleList;

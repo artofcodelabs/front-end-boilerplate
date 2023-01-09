@@ -11,8 +11,8 @@ import {
 
 import "config";
 import store from "stores/page1/store";
-import App from "containers/page1/App";
-import VisibleArticleList from "containers/page1/VisibleArticleList";
+import Root from "containers/page1/Root";
+import ArticleList from "containers/page1/ArticleList";
 import Assets from "components/page1/Assets";
 import ErrorPage from "components/shared/ErrorPage";
 
@@ -23,23 +23,19 @@ import "page1.css";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="page1" element={<App />} errorElement={<ErrorPage />}>
+    <Route path="page1" element={<Root />} errorElement={<ErrorPage />}>
       <Route errorElement={<ErrorPage />}>
-        <Route path="articles" element={<VisibleArticleList />} />
+        <Route path="articles" element={<ArticleList />} />
         <Route path="assets" element={<Assets />} />
-        <Route
-          path="articles/all"
-          element={<VisibleArticleList />}
-          loader={showAll}
-        />
+        <Route path="articles/all" element={<ArticleList />} loader={showAll} />
         <Route
           path="articles/read"
-          element={<VisibleArticleList />}
+          element={<ArticleList />}
           loader={showRead}
         />
         <Route
           path="articles/unread"
-          element={<VisibleArticleList />}
+          element={<ArticleList />}
           loader={showUnread}
         />
       </Route>

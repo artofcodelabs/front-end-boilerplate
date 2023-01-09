@@ -1,12 +1,12 @@
 import { connect } from "react-redux";
 
 import { anyArticles } from "selectors/articles";
-import Root from "components/page1/Root";
+import RootComponent from "components/page1/Root";
 
 const mapStateToProps = (state) => ({
   anyArticles: anyArticles(state),
 });
 
-const App = connect(mapStateToProps, null)(Root);
+const App = connect(mapStateToProps, null)(RootComponent);
 
 export default App;
