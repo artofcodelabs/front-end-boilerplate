@@ -1,0 +1,9 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer components {
+  a.link {
+    @apply text-indigo-600 hover:text-indigo-700 hover:underline;
+  }
+}

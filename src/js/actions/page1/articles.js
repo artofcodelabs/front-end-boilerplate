@@ -1,21 +1,40 @@
+import store from "stores/page1/store";
 import Article from "models/Article";
 
-export const loadArticles = () => async dispatch => {
+const show = (filter = "SHOW_ALL") => {
+  store.dispatch({
+    type: "SET_VISIBILITY_FILTER",
+    filter,
+  });
+};
+
+const loadArticles = async () => {
+  if (store.getState().articles.resources.length > 0) return;
+
   try {
     const resp = await Article.all({ resource: "main" });
-    dispatch({
-      type: "ADD_ARTICLES",
-      articles: resp.resources
+    store.dispatch({
+      type: "ARTICLES.ADD",
+      articles: resp.resources,
     });
   } catch (err) {
-    dispatch({
-      type: "FETCH_ARTICLES_FAILURE",
-      msg: "Something went wrong"
+    store.dispatch({
+      type: "ARTICLES.FETCH_FAILURE",
+      msg: "Something went wrong",
     });
   }
 };
 
-export const markAsRead = id => ({
-  type: "MARK_AS_READ",
-  id
-});
+const showAll = () => {
+  show();
+  loadArticles();
+};
+
+const showRead = () => show("SHOW_READ");
+
+const showUnread = () => {
+  show("SHOW_UNREAD");
+  loadArticles();
+};
+
+export { showAll, showRead, showUnread };

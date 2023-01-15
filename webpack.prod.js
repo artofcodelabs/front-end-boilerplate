@@ -1,33 +1,53 @@
-/* eslint-env node */
-
-const fs = require("fs");
-const cssnano = require("cssnano");
-const merge = require("webpack-merge");
-const ImageminPlugin = require("imagemin-webpack-plugin").default;
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const { merge } = require("webpack-merge");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 const common = require("./webpack.common.js");
-
-const appDirectory = fs.realpathSync(process.cwd());
 
 module.exports = merge(common, {
   mode: "production",
   devtool: "source-map",
-  plugins: [
-    new ImageminPlugin({
-      pngquant: {
-        quality: "95-100"
-      }
-    }),
-    new OptimizeCssAssetsPlugin({
-      cssProcessor: cssnano,
-      cssProcessorPluginOptions: {
-        preset: ["default", { discardComments: { removeAll: true } }]
-      },
-      canPrint: true
-    })
-  ],
-  output: {
-    publicPath: `${appDirectory}/public/assets/`
-  }
+  optimization: {
+    minimize: true,
+    minimizer: [
+      `...`,
+      new CssMinimizerPlugin(),
+      new ImageMinimizerPlugin({
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            // Lossless optimization with custom option
+            // Feel free to experiment with options for better result for you
+            plugins: [
+              ["jpegtran", { progressive: true }],
+              ["optipng", { optimizationLevel: 5 }],
+              // Svgo configuration here https://github.com/svg/svgo#configuration
+              [
+                "svgo",
+                {
+                  plugins: [
+                    {
+                      name: "preset-default",
+                      params: {
+                        overrides: {
+                          removeViewBox: false,
+                          addAttributesToSVGElement: {
+                            params: {
+                              attributes: [
+                                { xmlns: "http://www.w3.org/2000/svg" },
+                              ],
+                            },
+                          },
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        },
+      }),
+    ],
+  },
 });

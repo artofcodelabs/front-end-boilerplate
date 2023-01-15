@@ -1,11 +1,2 @@
 @import "./fonts.css";
-@import-normalize;
-
-body {
-  font-family: "Roboto", sans-serif;
-}
-
-a.active {
-  font-weight: bold;
-  text-decoration: none;
-}
+@import "./tailwind.css";

@@ -1,5 +1,5 @@
-/* eslint-env node */
-
 module.exports = {
-  modulePaths: ["src/js"]
+  modulePaths: ["src/js"],
+  testEnvironment: "jsdom",
+  testPathIgnorePatterns: ["<rootDir>/__tests__/js/e2e"],
 };
