@@ -1,2 +1,2 @@
-@import "./fonts.css";
-@import "./tailwind.css";
+@import url("./fonts.css");
+@import url("./tailwind.css");
