@@ -28,13 +28,18 @@ const loadArticles = async () => {
 const showAll = () => {
   show();
   loadArticles();
+  return null;
 };
 
-const showRead = () => show("SHOW_READ");
+const showRead = () => {
+  show("SHOW_READ");
+  return null;
+};
 
 const showUnread = () => {
   show("SHOW_UNREAD");
   loadArticles();
+  return null;
 };
 
 export { showAll, showRead, showUnread };
