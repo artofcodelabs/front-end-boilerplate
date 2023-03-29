@@ -1,7 +1,7 @@
 {
   "private": true,
   "name": "front-end-boilerplate",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Boilerplate code for a multi-static-page website powered by modern and fancy tools",
   "scripts": {
     "build": "webpack --mode=production --node-env=production -c webpack.prod.js --progress",
